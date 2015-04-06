@@ -16,6 +16,7 @@ body {
 	padding-left: 0 !important;
 	margin-left: 15px;
 	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 .carousel-controller {
@@ -38,6 +39,7 @@ body {
 .categorizedItem {
 	perspective: 1000;
 	padding: 10px;
+	text-align: center;
 }
 
 .categorizedItem.eligible:hover .item-flip-container {
