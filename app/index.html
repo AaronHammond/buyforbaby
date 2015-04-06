@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+    <head>
+        <title>BuyForBaby</title>
+        <link rel="stylesheet" href="styles/main.css">
+
+
+
+
+        <!-- START TEMPLATES (n.b. we will move these out to secondary files when we can, but for now, edit here) -->
+        <script id="category-template" type="text/x-handle-bars-template">
+            <div class="col-xs-1">{{name}}</div>
+            <div class="col-xs-1 carousel-control-container">
+                <button id="retreat" class="btn btn-default btn-lg carousel-controller">&lt;</button>
+            </div>
+            <div class="col-xs-8 carousel-container">
+                <div id="items">
+
+                </div>  
+            </div>
+            <div class="col-xs-1 carousel-control-container">
+                <button id="advance" class="btn btn-default btn-lg carousel-controller">&gt;</button>
+            </div>
+        </script>
+
+        <script id="desiredItem-template" type="text/x-handle-bars-template">
+            <div class="col-xs-4">
+                <img src="{{image}}" height="100%" width="100%"></img>
+            </div>
+            <div class="col-xs-3">
+                <div class="quant-spinner btn-group-vertical" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default btn-small quantUp">
+                        <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                    </button>
+
+                    <button class="btn btn-default btn-small quant">
+                        <input type="text" class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57' value="{{quantity}}"></input>
+                    </button>
+
+                    <button type="button" class="btn btn-default btn-small quantDown">
+                        <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-xs-5">
+                <div class="wishlist-controls">
+                    <span class="pull-left glyphicon glyphicon-heart favoriting {{#if favorited}}active{{/if}}"></span>
+                    <button class="item-remover miniature pull-right" style="visibility: visible;">
+                        x
+                        <div class="radial-progress" data-progress="100">
+                            <div class="circle">
+                                <div class="mask full">
+                                    <div class="fill"></div>
+                                </div>
+                                <div class="mask half">
+                                    <div class="fill"></div>
+                                    <div class="fill fix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+                <div class="wishlist-comments">
+                    <textarea class="form-control" placeholder="Comments..." rows=3></textarea>
+                </div>
+                
+                
+            </div>
+        </script>
+
+        <script id="item-template" type="text/x-handle-bars-template">
+            <div class="item-flip-container">
+                <div class="item-front" style="background-image: url({{image}}); background-size: contain;">
+                    <button class="item-remover">
+                        x
+                        <div class="radial-progress" data-progress="100">
+                            <div class="circle">
+                                <div class="mask full">
+                                    <div class="fill"></div>
+                                </div>
+                                <div class="mask half">
+                                    <div class="fill"></div>
+                                    <div class="fill fix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+
+                </div>
+                <div class="item-back" style="background: linear-gradient(rgba(0, 0, 200, 0.5), rgba(0, 0, 200, 0.5)), url({{image}}); background-size: contain;">
+                    <button class="item-adder">+</button>
+                </div>
+            </div>
+            <span>{{name}}</span>
+        </script>
+
+        <script id="wishlist-template" type="text/x-handle-bars-template">
+            <h1>Your Wishlist</h1>
+            <div id="wishedItems" class="container-fluid">
+
+            </div>
+        </script>
+
+        <script id="metacategory-template" type="text/x-handle-bars-template">
+            <div id="categoryContainer">
+
+            </div>
+        </script>
+
+        <script id="catalogue-template" type="text/x-handle-bars-template">
+            <div role="tabpanel">
+
+              <!-- Nav tabs -->
+              <ul id="navTabs" class="nav nav-tabs" role="tablist">
+              </ul>
+
+              <!-- Tab panes -->
+              <div id="tabContents"class="tab-content">
+              </div>
+
+            </div>
+        </script>
+
+
+        <!-- END TEMPLATES -->
+
+
+
+
+
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <div id="content" class="row">
+
+                <div id="wishlist" class="col-xs-4">
+                
+                </div>
+
+                <div id="giftlist" class="col-xs-8">
+                
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Vendor Scripts -->
+        <script src="scripts/vendor/jquery-1.11.2.js"></script>
+        <script src="scripts/vendor/underscore.js"></script>
+        <script src="scripts/vendor/backbone.js"></script>
+        <script src="scripts/vendor/handlebars-v3.0.0.js"></script>
+
+        <!-- bootstrap is here at least temporarily -->
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
+        <!-- end bootstrap -->
+
+        <!-- main app script -->
+        <script src="scripts/main.js"></script>
+
+        <!-- script to compile handlebars templates -->
+        <script src="scripts/templates.js"></script>
+
+        <!-- a specific item in the catalogue -->
+        <script src="scripts/models/item.js"></script>
+        <script src="scripts/views/item.js"></script>
+
+        <!-- an item that the user wants -->
+        <script src="scripts/models/desiredItem.js"></script>
+        <script src="scripts/views/desiredItem.js"></script>
+
+        <!-- a specific category of items (i.e. pants) -->
+        <script src="scripts/models/category.js"></script>
+        <script src="scripts/views/category.js"></script>
+
+        <!-- the collection of desiredItems that the user wants -->
+        <script src="scripts/collections/wishlist.js"></script>
+        <script src="scripts/views/wishlist.js"></script>
+
+        <!-- a collection of categories (i.e. clothing) -->
+        <script src="scripts/models/metacategory.js"></script>
+        <script src="scripts/views/metacategory.js"></script>
+
+        <!-- a collection of metacategories (that is, the top level of item selection, hierarchically) -->
+        <script src="scripts/collections/catalogue.js"></script>
+        <script src="scripts/views/catalogue.js"></script>
+
+</body>
+</html>

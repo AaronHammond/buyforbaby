@@ -1,0 +1,44 @@
+/*
+  Courtesy of Anders Ingemann (https://medium.com/@andsens/radial-progress-indicator-using-css-a917b80c43f9)
+ */
+
+.radial-progress {
+  width: 60px;
+  height: 60px;
+  background-color: #000000;
+  border-radius: 50%;
+}
+.radial-progress .circle .mask,
+.radial-progress .circle .fill,
+.radial-progress .circle .shadow {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  border-radius: 50%;
+}
+.radial-progress .circle .mask,
+.radial-progress .circle .fill {
+  -webkit-backface-visibility: hidden;
+  transition: -webkit-transform 1s;
+  transition: -ms-transform 1s;
+  transition: transform 1s;
+  border-radius: 50%;
+}
+.radial-progress .circle .mask {
+  clip: rect(0px, 60px, 60px, 30px);
+}
+.radial-progress .circle .mask .fill {
+  clip: rect(0px, 30px, 60px, 0px);
+  background-color: #ff0000;
+}
+.radial-progress[data-progress="100"] .circle .mask.full,
+.radial-progress[data-progress="100"] .circle .fill {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.radial-progress[data-progress="100"] .circle .fill.fix {
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
