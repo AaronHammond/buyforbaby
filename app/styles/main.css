@@ -283,4 +283,7 @@ body {
 	-webkit-animation: shake 0.5s 2s;
 }
 
+.btn-default {
+	color: purple;
+}
 
