@@ -1,0 +1,58 @@
+
+html{
+  height: 100%;
+}
+
+html, body {
+    margin:0;
+    padding: 0;
+}
+body {
+  	min-height: 100%;
+	background-color: antiquewhite;	
+	font-family: 'Poiret One', sans-serif;
+}
+
+
+.intro {
+    font-size: 18pt;
+    width: 17em;
+    text-align: center;
+}
+
+.btn-landing {
+    color:white;
+    font-size: 14pt;
+    background-color: lightblue;
+    height: 50px;
+    width: 200px;
+}
+
+.intro {
+    margin:150px auto;
+    padding-left:395;
+
+}
+
+div.bird {
+    position: fixed;
+    top:200px;
+    left: 150px;
+    width: 30%;
+}
+
+div.cloud {
+    width: 100%;
+}
+
+.svg-container {
+display: inline-block;
+position: relative;
+}
+
+.svg-content {
+display: inline-block;
+position: absolute;
+top: 0;
+left: 0;
+}
