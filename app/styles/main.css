@@ -20,7 +20,7 @@ body {
 }
 
 body > .container-fluid {
-	bottom: 30px;
+	bottom: 150px;
 	top: 30px;
 	left: 100px;
 	right: 100px;
