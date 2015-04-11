@@ -6,6 +6,13 @@ body {
     height: 100%;
 }
 
+#logo {
+	font-family: 'Lobster', cursive;
+	font-size: 50px;
+	margin-bottom: 30px;
+	color: darkslateblue;
+}
+
 .container-fluid {
 	position: absolute;
 	top: 0;
@@ -15,8 +22,8 @@ body {
 body > .container-fluid {
 	bottom: 30px;
 	top: 30px;
-	left: 30px;
-	right: 30px;
+	left: 100px;
+	right: 100px;
 }
 
 h1{
