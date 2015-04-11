@@ -17,8 +17,18 @@ window.BuyForBaby = {
         var catalogue = loadRandomData();
         $('#giftlist').html(new BuyForBaby.Views.Catalogue({ model: catalogue }).render().$el);
     
-
-
+        var fix_height = function() {
+            var max_height = 0;
+            $('.tab-pane').each(function(i, o) {
+                if($(o).height() > max_height) {
+                    max_height = $(o).height();
+                }
+            })
+            $('#content').css('max-height', max_height + 115);
+        }
+        $(window).on('resize', fix_height);
+        fix_height();
+        
     }
 };
 
