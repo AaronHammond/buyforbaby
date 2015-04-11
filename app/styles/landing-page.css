@@ -1,0 +1,41 @@
+
+html{
+  height: 100%;
+}
+
+html, body {
+    margin:0;
+    padding: 0;
+}
+body {
+  	min-height: 100%;
+	background-color: antiquewhite;	
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+.intro {
+    margin:200px auto;
+    padding-left:395;
+    font-size: 18pt;
+    width: 17em;
+}
+div.bird {
+    position: fixed;
+    top:100px;
+    left: 10%;
+}
+
+img.cloud {
+    width: 175%;
+    position: relative;
+    left: -66%;
+}
+
+div.cloud {
+    height: 220px;
+    width: 100%;
+	overflow: hidden;
+    position: fixed;
+    bottom: 0;
+}
