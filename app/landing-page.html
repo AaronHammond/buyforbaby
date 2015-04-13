@@ -10,9 +10,30 @@
 	<section>			
 		<div class="intro">
 			<h1>Look's like someone's having a party!</h1>
-			<h4>We'll take care of the accounting while you take care of the guest of honor</h4>
+			<h4 class="blurb">We'll take care of the accounting while you take care of the guest of honor.</h4>
 			<button class="btn-landing">Create a Registry</button>
 			<button class="btn-landing">Find a Registry</button>
+			<form class="registration parents">
+				<input class="registration" type="text" placeholder="First name*" autofocus><br>
+				<input class="registration" type="text" placeholder="Last name*"><br>
+				<!-- Add input fields for other parent's-->
+				<button class="btn-landing add"> + </button><br>
+				<!-- Have these fields slide down as more
+				names are added -->
+				<div class="dynamic">
+					<input class="registration" type="text" placeholder="Registry title*"><br>
+					<input class="registration" type="text" placeholder="Boy or Girl?"><br>
+					<button class="btn-landing submit">Submit</button>
+				</div>
+			</form>
+			<form class="registration guests">
+				<input class="registration" type="text" placeholder="Your name*"><br>
+				<input class="registration" type="text" placeholder="Parent's Last Name"><br>
+				<div class="registration"> ------   OR    ------ </div>
+				<input class="registration" type="text" placeholder="Registry Name"><br>
+				<button class="btn-landing submit">Search</button>
+			</form>
+
 
 		</div>
 		<div class="bird svg-container">
