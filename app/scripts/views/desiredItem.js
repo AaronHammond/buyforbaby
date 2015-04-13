@@ -11,7 +11,7 @@ BuyForBaby.Views = BuyForBaby.Views || {};
 
         id: '',
 
-        className: 'row',
+        className: 'row desiredItem vertically-aligned',
 
         events: {
             'click .quantUp' : "changeQuantity",
@@ -36,26 +36,27 @@ BuyForBaby.Views = BuyForBaby.Views || {};
                this.$('.quant input').val(currQuant+1);
             } else if ($(e.currentTarget).hasClass('quantDown')) {
                 if (currQuant <= 1) {
+                    this.$('.item-remover').stop();
                     this.$('.item-remover').addClass('shakey');
                     var self = this;
                     // jiggle the trash icon
                     var jiggle = function (i) {
                         if(i > 0) {
                             self.$('.item-remover').animate({
-                                "margin-right": "10px"
-                            }, 200, function() {
+                                "margin-right": "5px"
+                            }, 100, function() {
                                 self.$('.item-remover').animate({
-                                    "margin-right": "-10px"
-                                }, 200, jiggle.bind(null, i-1));
+                                    "margin-right": "-5px"
+                                }, 100, jiggle.bind(null, i-1));
                             });
                         } else {
                             self.$('.item-remover').animate({
                                     "margin-right": "0px"
-                            }, 200);
+                            }, 100);
                         }
                     };
 
-                    jiggle(3);
+                    jiggle(2);
                     
                 } else {
                     this.$('.quant input').val(currQuant-1);

@@ -9,7 +9,7 @@ BuyForBaby.Views = BuyForBaby.Views || {};
 
         tagName: 'div',
 
-        id: '',
+        id: 'innerWishlistContainer',
 
         className: '',
 
