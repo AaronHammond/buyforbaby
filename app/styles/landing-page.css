@@ -1,4 +1,5 @@
 
+/*bird wing color: #C5B5D9*/
 html{
   height: 100%;
 }
@@ -9,7 +10,7 @@ html, body {
 }
 body {
   	min-height: 100%;
-	background-color: antiquewhite;	
+	background-color: #3FEBCD;	
 	font-family: 'Poiret One', sans-serif;
 }
 
