@@ -1,39 +1,45 @@
 body {
     /*background: #D2EEFF; light blue*/
-    background: #E8D8FF;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
+    /* background: blue; */
+    /* background-image: url(http://www.rickyneath.com/backgrounds/8.jpg); */
+    background-size: cover;
+    background-position-y: 0px;
+    font-family: 'Lucinda Sans Unicode', sans-serif;
+    font-weight: 600;
     height: 100%;
 }
 
 #logo {
-	font-family: 'Lobster', cursive;
-	font-size: 50px;
-	margin-bottom: 30px;
-	color: darkslateblue;
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: #7B7B7C;
+    margin-left: 30px;
 }
 
+div#logo {}
+
 .container-fluid {
-	position: absolute;
-	top: 0;
-	bottom: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
 }
 
 body > .container-fluid {
-	bottom: 150px;
-	top: 30px;
-	left: 100px;
-	right: 100px;
+    bottom: 150px;
+    top: 30px;
+    /* left: 100px; */
+    /* right: 100px; */
 }
 
 h1.shoppingView{
-    color: rgb(75, 75, 75);
+    color: #7B7B7C;
     text-align: center;
-    font-weight: 600;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    font-weight: inherit;
+    /* box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37); */
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: #BEB3F2;
+    /* background-color: #BEB3F2; */
     position: absolute;
     height: 80px;
     top: 0px;
@@ -41,39 +47,41 @@ h1.shoppingView{
     width: 100%;
     margin-top: 0px;
     z-index: 2;
+    font-size: x-large;
     cursor: default;
 }
 
 #content {
-	display: table;
-	height: 100%;
+    display: table;
+    height: 100%;
+    background-color: #C2FFEA;
 }
 
 #wishlist{
-    background-color: #CAC0F2;
-    border: 1px solid #BEB3EF;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    background-color: rgba(0, 150, 150, .4);
+    /* border: 1px solid #7b7b7c; */
+    /* box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37); */
     float: none;
     display: table-cell;
 }
 
 #innerWishlistContainer {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
 }
 
 #wishedItems {
-	position: absolute;
-	top: 80px;
-	bottom: 0px;
-	overflow-y: scroll;
+    position: absolute;
+    top: 80px;
+    bottom: 0px;
+    overflow-y: scroll;
 }
 
 span{
-    color: rgba(74, 74, 74, 0.75);
+    color: #7B7B7C;
     text-align: center;
     font-size: 16pt;
     cursor: default;
@@ -90,82 +98,85 @@ span{
 }
 
 .btn-default[disabled] > span {
-	color: rgba(74, 74, 74, 0.25);
+    color: rgba(74, 74, 74, 0.25);
 }
 
 .btn-default[disabled], .btn-default:active, .btn-default:hover, .btn-default:focus {
-	outline: none !important;
-	background-color:rgba(0, 139, 255, 0.0) !important;
-	box-shadow: none !important;
+    outline: none !important;
+    background-color:rgba(0, 139, 255, 0.0) !important;
+    box-shadow: none !important;
 }
 
 .btn-default > span {
-	color: #FEF9FD;
-	cursor: pointer;
+    color: #FEF9FD;
+    cursor: pointer;
 }
 
 .btn-default:active > span {
-	color: rgba(74, 74, 74, 0.75);
+    color: rgba(74, 74, 74, 0.75);
 }
 
 #navTabs {
-	font-size: 14pt;
+    font-size: 14pt;
+    
     color: white;
     text-align: center;
-    border: none;
+    
+    /* border: none; */
+    
     padding-left: 30px;
-	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
-	background-color: #BEB3F2;
-	height: 80px;
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 1px;
+    /* box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37); */
+    /* background-color: #BEB3F2; */
+    height: 80px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 1px;
 }
 
 #navTabs > li > a {
-	background-color: inherit;
-	border: 0;
-	padding: 0;
-	color: inherit;
+    background-color: inherit;
+    border: 0;
+    padding: 0;
+    color: inherit;
 }
 
 #navTabs > li > span {
-	color: inherit;
-	cursor: inherit;
+    color: inherit;
+    cursor: inherit;
 }
 
 #navTabs > li.active {
-	cursor: default;
+    cursor: default;
 }
 
 #navTabs > li {
-	padding: 10px 25px;
-	color: rgba(75,75,75, 0.5);
-	cursor: pointer;
+    padding: 10px 25px;
+    color: rgba(75,75,75, 0.5);
+    cursor: pointer;
 }
 
 #navTabs > li.active, #navTabs > li.active {
-	color: #FEF9FD;
+    color: #7b7b7c;
 }
 
 #navTabs > li.active > a {
-	background-color: inherit;
-	border: 0;
-	color: inherit;
+    background-color: inherit;
+    border: 0;
+    color: inherit;
 }
 
 
 
 #tabContents {
-	padding-left: 30px;
-	top: 80px;
-	left: 0px;
-	right: 0px;
-	bottom: 0px;
-	position: absolute;
-	overflow-y: scroll;
-	overflow-x: hidden;
+    padding-left: 30px;
+    top: 80px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .container {
@@ -175,20 +186,25 @@ span{
 #giftlist {
     float: none;
     display: table-cell;
-    height: 100%;
-    padding-left: 0px;
+    /* height: 100%; */
+    padding-left: -100px;
     padding-right: 0px;
+    /* margin-left: 100px; */
+    top: -90px;
 }
 
 #innerGiftlistContainer {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 15px;
-	right: 15px;
-	background-color: #CAC0F2;
-    border: 1px solid #BEB3EF;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 70px;
+    right: 5px;
+    /* background-color: #CAC0F2; */
+    
+    /* border: 1px solid #BEB3EF; */
+    
+    /* box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37); */
+    margin-left: px;
 }
 
 .carousel-container {
@@ -220,7 +236,7 @@ span{
 
 .categorizedItem {
     perspective: 1000;
-    padding: 10px;
+    padding: 2px;
     text-align: center;
 }
 
@@ -256,17 +272,17 @@ span{
 
 .item-front {
     z-index: 2;
-    transform: rotateY(0deg);
+    /* transform: rotateY(0deg); */
     min-width: 100%;
     min-height: 100%;
-    border-radius: 5pt;
+    /* border-radius: 5pt; */
 }
 
 .item-back {
     transform: rotateY(180deg);
     min-width: 100%;
     min-height: 100%;
-    border-radius: 8px;
+    /* border-radius: 8px; */
 }
 
 .item-remover {
@@ -363,25 +379,25 @@ span{
 }
 
 .quant-spinner .quantUp:hover, .quant-spinner .quantDown:hover {
-	cursor: default;
+    cursor: default;
 }
 
 .quant-spinner .quantUp > span:hover,
 .quant-spinner .quantDown > span:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .desiredItem {
-	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
-	background-color: #E8D8FF;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	margin-top: 0;
-	margin-bottom: 0;
+    /* box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37); */
+    /* background-color: #E8D8FF; */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .desiredItem img {
-	border-radius: 4px;
+    border-radius: 4px;
 }
 
 /*
@@ -398,20 +414,20 @@ span{
 }
 
 .item-remover.miniature .remover-ico {
-	font-size: 13px;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	z-index: 2;
-	background-color: lightgray;
-	border-radius: 50%;
-	padding-top: 1px;
-	cursor: pointer;
+    font-size: 13px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    background-color: lightgray;
+    border-radius: 50%;
+    padding-top: 1px;
+    cursor: pointer;
 }
 .item-remover.miniature:active .remover-ico {
-	background-color: darkgray;
+    background-color: darkgray;
 }
 
 .item-remover.miniature .radial-progress {
@@ -479,7 +495,7 @@ span{
     -webkit-text-fill-color: red;
 }
 .wishlist-controls .favoriting.active:hover {
-	animation: none;
+    animation: none;
     -webkit-animation: none;
 
 }
@@ -510,3 +526,13 @@ span{
 }
 
 
+
+
+div#logo-image {
+    background-image: url(file:///C:/Users/Priya/Dropbox/JrSpring/813/buyforbaby/app/images/bird2.svg);
+    width: px;
+    height: 80px;
+    color: blue;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

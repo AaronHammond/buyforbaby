@@ -45,9 +45,10 @@
                     </button>
                 </div>
             </div>
+                 
             <div class="col-xs-5">
                 <div class="wishlist-controls">
-                    <span class="pull-left glyphicon glyphicon-heart favoriting {{#if favorited}}active{{/if}}"></span>
+
                     <button class="item-remover miniature pull-right" style="visibility: visible;">
                         <span class="remover-ico">x</span>
                         <div class="radial-progress" data-progress="100">
@@ -97,7 +98,7 @@
         </script>
 
         <script id="wishlist-template" type="text/x-handle-bars-template">
-            <h1 class="shoppingView">Your Wishlist</h1>
+            <h1 class="shoppingView">WISH LIST</h1>
             <div id="wishedItems" class="container-fluid">
 
             </div>
@@ -133,7 +134,10 @@
     <body>
 
         <div class="container-fluid">
-            <div id="logo" class="row">BuyForBaby</div>
+            <div id="logo" class="row">
+                <div id="logo-image" class="col-xs-1"></div>
+                BuyForBaby
+            </div>
             <div id="content" class="row container-height">
 
                 <div id="wishlist" class="col-xs-4">
@@ -198,3 +202,6 @@
 
 </body>
 </html>
+
+<!-- Code that got taken out
+               // <span class="pull-left glyphicon glyphicon-heart favoriting {{#if favorited}}active{{/if}}"></span> -->
