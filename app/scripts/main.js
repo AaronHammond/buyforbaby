@@ -18,7 +18,7 @@ window.BuyForBaby = Backbone.Router.extend({
         BuyForBaby.EventBus = _.extend({}, Backbone.Events)
 
         this.wishlist = new BuyForBaby.Collections.Wishlist([]);
-        this.catalogue = loadRandomData();
+        this.catalogue = loadData();
     
         
     },
@@ -102,18 +102,21 @@ $(document).ready(function () {
 
 // load some random data
 
-function loadRandomData() {
+function loadData() {
     var clothings = ['Pants', 'Shirts', 'Sweaters'];
     var cats = [];
     for(var c in clothings) {
         var cat = clothings[c];
 
         
-        var items = [];
+        var items = [new BuyForBaby.Models.Item({
+                name: 'generic ' + cat, 
+                image: 'images/Generic' + cat + '.jpg'
+            })];
         for(var i = 0; i < 5; i++) {
             var randomItem = new BuyForBaby.Models.Item({
                 name: cat + ' ' + i,
-                image: 'images/pants.jpg'
+                image: 'images/' + cat + '_' + i + '.jpg'
             });
             items.push(randomItem);
         }
@@ -125,7 +128,8 @@ function loadRandomData() {
     }
     var clothing = new BuyForBaby.Models.Metacategory({
         categories: new Backbone.Collection(cats),
-        name: 'Clothing'
+        name: 'Clothing',
+        icon: "glyphicon-sunglasses"
     });
 
     var toys = ['Rattles', 'Balls', 'Blocks'];
@@ -134,11 +138,14 @@ function loadRandomData() {
         var cat = toys[c];
 
         
-        var items = [];
+        var items = [new BuyForBaby.Models.Item({
+                name: 'generic ' + cat, 
+                image: 'images/Generic' + cat + '.jpg'
+            })];
         for(var i = 0; i < 5; i++) {
             var randomItem = new BuyForBaby.Models.Item({
                 name: cat + ' ' + i,
-                image: 'images/pants.jpg'
+                image: 'images/' + cat + '_' + i + '.jpg'
             });
             items.push(randomItem);
         }
@@ -150,7 +157,8 @@ function loadRandomData() {
     }
     var toy = new BuyForBaby.Models.Metacategory({
         categories: new Backbone.Collection(cats),
-        name: 'Toys'
+        name: 'Toys',
+        icon: "glyphicon-piggy-bank"
     });
 
     var hygienes = ['Bottles', 'Bibs', 'Wipes'];
@@ -159,11 +167,15 @@ function loadRandomData() {
         var cat = hygienes[c];
 
         
-        var items = [];
+        var items = [new BuyForBaby.Models.Item({
+                name: 'generic ' + cat, 
+                image: 'images/Generic' + cat + '.jpg'
+            })];
+
         for(var i = 0; i < 5; i++) {
             var randomItem = new BuyForBaby.Models.Item({
                 name: cat + ' ' + i,
-                image: 'images/pants.jpg'
+                image: 'images/' + cat + '_' + i + '.jpg'
             });
             items.push(randomItem);
         }
@@ -175,7 +187,8 @@ function loadRandomData() {
     }
     var hygiene = new BuyForBaby.Models.Metacategory({
         categories: new Backbone.Collection(cats),
-        name: 'Hygiene'
+        name: 'Hygiene',
+        icon: "glyphicon-baby-formula"
     });
 
     var catalogue = new BuyForBaby.Collections.Catalogue([clothing, toy, hygiene]);

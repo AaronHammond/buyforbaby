@@ -75,7 +75,7 @@
 
         <script id="item-template" type="text/x-handle-bars-template">
             <div class="item-flip-container">
-                <div class="item-front" style="background-image: url({{image}}); background-size: contain;">
+                <div class="item-front" style="background-image: url({{image}}); background-size: cover;">
                     <button class="item-remover">
                         x
                         <div class="radial-progress" data-progress="100">
@@ -92,7 +92,7 @@
                     </button>
 
                 </div>
-                <div class="item-back" style="background: linear-gradient(rgba(0, 0, 200, 0.5), rgba(0, 0, 200, 0.5)), url({{image}}); background-size: contain;">
+                <div class="item-back" style="background: linear-gradient(rgba(0, 0, 200, 0.5), rgba(0, 0, 200, 0.5)), url({{image}}); background-size: cover;">
                     <button class="item-adder">+</button>
                 </div>
             </div>
@@ -199,7 +199,7 @@
 
 
         <!-- Catalogue Page -->
-        <section id="mainPage" class="container-fluid open" style="display: none;">
+        <section id="mainPage" class="container-fluid" style="display: none;">
             <div id="logo" class="row">
                 BuyForBaby
                 <button id="doneButton" class="btn-landing pull-right">Done</button>
@@ -225,6 +225,8 @@
             </div>
 
         </section>
+
+        <section class="open" style="display: none;"></section>
 
         <!-- Vendor Scripts -->
         <script src="scripts/vendor/jquery-1.11.2.js"></script>

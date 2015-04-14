@@ -33,7 +33,7 @@ BuyForBaby.Views = BuyForBaby.Views || {};
             
             this.model.forEach(function(m) {
                 var tab = $('<li>').attr('role', 'presentation').append(
-                    $('<span>').addClass('glyphicon glyphicon-sunglasses')
+                    $('<span>').addClass('glyphicon ' + m.get('icon'))
                 ).append(
                     $('<a>').attr('href', '#' + m.get('name')).attr('aria-controls', m.get('name')).attr('role', 'tab').attr('data-toggle', 'tab').text(m.get('name'))
                 );
