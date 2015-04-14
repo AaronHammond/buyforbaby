@@ -30,7 +30,7 @@
             <div class="col-xs-4">
                 <img src="{{image}}" height="100%" width="100%"></img>
             </div>
-            <div class="col-xs-3">
+            <div class="col-xs-2">
                 <div class="quant-spinner btn-group-vertical" role="group" aria-label="...">
                     <button type="button" class="btn btn-default btn-small quantUp">
                         <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
@@ -45,8 +45,17 @@
                     </button>
                 </div>
             </div>
-                 
-            <div class="col-xs-5">
+
+            <div class="col-xs-6">
+                
+                <div class="wishlist-comments">
+                    <textarea class="form-control" placeholder="Comments..." rows=3></textarea>
+                </div>
+                
+                
+            </div>
+
+            <div class="col-xs-1">
                 <div class="wishlist-controls">
 
                     <button class="item-remover miniature pull-right" style="visibility: visible;">
@@ -64,11 +73,6 @@
                         </div>
                     </button>
                 </div>
-                <div class="wishlist-comments">
-                    <textarea class="form-control" placeholder="Comments..." rows=3></textarea>
-                </div>
-                
-                
             </div>
         </script>
 
@@ -91,7 +95,7 @@
                     </button>
 
                 </div>
-                <div class="item-back" style="background: linear-gradient(rgba(0, 0, 200, 0.5), rgba(0, 0, 200, 0.5)), url({{image}}); background-size: contain;">
+                <div class="item-back" style="background: url({{image}}); background-size: contain;">
                     <button class="item-adder">+</button>
                 </div>
             </div>

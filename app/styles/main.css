@@ -9,6 +9,22 @@ body {
     height: 100%;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+    text-align: right;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+    border-left: 1px solid #ccc;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
+
 #logo {
     font-family: 'Lobster', cursive;
     font-size: 50px;
@@ -33,7 +49,7 @@ body > .container-fluid {
 }
 
 h1.shoppingView{
-    color: #7B7B7C;
+    color: white;
     text-align: center;
     font-weight: inherit;
     /* box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37); */
@@ -98,7 +114,7 @@ span{
 }
 
 .btn-default[disabled] > span {
-    color: rgba(74, 74, 74, 0.25);
+    color: rgba(74, 74, 74, 0);
 }
 
 .btn-default[disabled], .btn-default:active, .btn-default:hover, .btn-default:focus {
@@ -108,8 +124,16 @@ span{
 }
 
 .btn-default > span {
-    color: #FEF9FD;
+    /* color: #7b7b7c; */
     cursor: pointer;
+}
+
+span.glyphicon.glyphicon-chevron-down {
+    color:  white;
+}
+
+span.glyphicon.glyphicon-chevron-up {
+    color: white;
 }
 
 .btn-default:active > span {
@@ -142,6 +166,7 @@ span{
 }
 
 #navTabs > li > span {
+    background-color: rgb(255, 255, 153);
     color: inherit;
     cursor: inherit;
 }
@@ -190,7 +215,7 @@ span{
     padding-left: -100px;
     padding-right: 0px;
     /* margin-left: 100px; */
-    top: -90px;
+    top: -80px;
 }
 
 #innerGiftlistContainer {
@@ -221,7 +246,10 @@ span{
 }
 
 .carousel-control-container {
+    text-align: center;
 }
+
+.col-xs-1.carousel-control-container {}
 
 .vertically-aligned { 
     display: flex;
@@ -245,7 +273,7 @@ span{
 }
 
 .categorizedItem.added .item-flip-container {
-    transform: rotateY(360deg);
+    /*transform: rotateY(360deg);*/
 }
 
 .categorizedItem.added {
@@ -253,7 +281,7 @@ span{
 }
 
 .item-flip-container {
-    transition: 1.0s;
+    /*transition: 0.3s;*/
     transform-style: preserve-3d;
     position: relative;
     width: 100%;
@@ -303,9 +331,19 @@ span{
     border-radius: 25px;
     font-size: 25px;
     box-shadow: none;
-    border: none;
+    /* border: none; */
+    /* border-width: 2px; */
+    /* border-color: white; */
     background-color: lightgrey;
-    box-shadow: 0 5px 7px 0 rgba(0, 0, 0, 0.19);
+    /* box-shadow: 0 5px 7px 0 rgba(0, 0, 0, 0.19); */
+}
+
+button.item-adder {
+    border-width: thin;
+}
+
+.item-adder {
+    background-color: rgb(255, 200, 0);
 }
 
 .item-adder:active, .item-remover:active {
@@ -502,6 +540,7 @@ span{
 
 .wishlist-comments textarea {
     resize: none;
+    /* color:  blue; */
 }
 
 @-webkit-keyframes shake {
