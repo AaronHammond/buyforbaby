@@ -58,6 +58,12 @@ BuyForBaby.Views = BuyForBaby.Views || {};
 
         render: function () {
             this.$el.html(this.template(this.model.toJSON()));
+
+            if(app.wishlist.findWhere({catalogueId: this.model.cid})) {
+                this.$el.removeClass('eligible');
+                this.$el.addClass('added');
+            }
+
             return this;
         }
 

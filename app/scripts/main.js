@@ -1,40 +1,102 @@
-window.BuyForBaby = {
+window.BuyForBaby = Backbone.Router.extend({
     Models: {},
     Collections: {},
     Views: {},
-    Routers: {},
-    init: function () {
+    
+
+    routes: {
+        "": "viewLandingPage",
+        "catalogue": "viewCatalogue",
+        "wishlist": "viewWishlist"
+    },
+
+    initialize: function () {
         'use strict';
         console.log('Hello from Backbone!');
-
 
         // create a global eventbus (inspired by http://spin.atomicobject.com/2012/04/16/lets-talk-an-eventbus-in-backbone-js/)
         BuyForBaby.EventBus = _.extend({}, Backbone.Events)
 
-        var wishlist = new BuyForBaby.Collections.Wishlist([]);
-        $('#wishlist').html(new BuyForBaby.Views.Wishlist({ model: wishlist }).render().$el);
-
-        var catalogue = loadRandomData();
-        $('#giftlist').html(new BuyForBaby.Views.Catalogue({ model: catalogue }).render().$el);
+        this.wishlist = new BuyForBaby.Collections.Wishlist([]);
+        this.catalogue = loadRandomData();
     
-        var fix_height = function() {
-            var max_height = 0;
-            $('.tab-pane').each(function(i, o) {
-                if($(o).height() > max_height) {
-                    max_height = $(o).height();
-                }
-            })
-            $('#content').css('max-height', max_height + 115);
-        }
-        $(window).on('resize', fix_height);
-        fix_height();
         
+    },
+
+    viewCatalogue: function() {
+        $('#wishlist').html(new BuyForBaby.Views.Wishlist({ model: this.wishlist }).render().$el);
+        $('#giftlist').html(new BuyForBaby.Views.Catalogue({ model: this.catalogue }).render().$el);
+
+        $('body > section.open').fadeOut('slow', function() {
+            var fix_height = function() {
+                var max_height = 0;
+                $('.tab-pane').each(function(i, o) {
+                    if($(o).height() > max_height) {
+                        max_height = $(o).height();
+                    }
+                })
+                //$('#content').css('max-height', max_height + 115);
+            }
+
+            $('#mainPage').fadeIn('slow', function() {
+                fix_height();
+            }).addClass('open');
+
+            
+            $(window).off('resize').on('resize', fix_height);
+            
+        }).removeClass('open');
+
+        $('#doneButton').off().on('click', function() {
+            app.navigate('wishlist', {trigger: true});
+        });
+    },
+
+    viewLandingPage: function() {
+        $('body > section.open').fadeOut('slow', function() {
+            $('#landingPage').fadeIn('slow', function() {
+                $('#findRegistry').off().on('click', function() {
+                    $('form.registration.open').fadeOut('slow', function() {
+                        $('form.registration.guests').fadeIn('slow').addClass('open');
+                    }).removeClass('open');
+                });
+
+
+                $('#createRegistry').off().on('click', function() {
+                    $('form.registration.open').fadeOut('slow', function() {
+                        $('form.registration.parents').fadeIn('slow').addClass('open');
+                    }).removeClass('open');
+                });
+
+                $('form').off().on('submit', function(e) {
+                    e.preventDefault();
+
+                    app.navigate('catalogue', {trigger: true});
+                });
+
+            }).addClass('open');
+        }).removeClass('open');
+    },
+
+    viewWishlist: function() {
+        $('#completelist').html(new BuyForBaby.Views.CompleteList({ model: this.wishlist }).render().$el);
+        $('body > section.open').fadeOut('slow', function() {
+            $('#completelistpage').fadeIn('slow', function() {
+                
+
+            }).addClass('open');
+        }).removeClass('open');
+
+        $('#editButton').off().on('click', function() {
+            app.navigate('catalogue', {trigger: true});
+        });
     }
-};
+});
 
 $(document).ready(function () {
     'use strict';
-    BuyForBaby.init();
+    window.app = new BuyForBaby();
+    Backbone.history.start();
 });
 
 
@@ -91,7 +153,7 @@ function loadRandomData() {
         name: 'Toys'
     });
 
-    var hygienes = ['Bottle', 'Bib', 'Baby Wipes'];
+    var hygienes = ['Bottles', 'Bibs', 'Wipes'];
     var cats = [];
     for(var c in hygienes) {
         var cat = hygienes[c];

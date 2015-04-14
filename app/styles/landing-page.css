@@ -11,16 +11,16 @@ html, body {
 body {
   	min-height: 100%;
 	background-color: #3FEBCD;	
-	font-family: 'Poiret One', sans-serif;
 }
 
 
 .intro {
     font-size: 18pt;
-    width: 17em;
+    width: 35em;
     text-align: center;
-    margin: 150px auto 0 auto;
-    padding-left:395;
+    margin: 0 auto 0 auto;
+    padding-left: 395px;
+    padding-top: 150px;
 
 }
 
@@ -30,35 +30,32 @@ body {
 
 .btn-landing {
     color:white;
-    font-size: 10pt;
+    font-size: 16px;
     background-color: #C5B5D9;
     height: 50px;
     width: 180px;
     border: none;
     margin-top: 10px;
     padding: 0px 5px;
-    text-transform:uppercase;
     border-radius: 3px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
 }
 .btn-landing:hover {
     cursor: pointer;
     opacity: 0.91;
 }
+.btn-landing:active {
+    background-color: #BEB3F2;
+    opacity: 1.0;
+}
 .btn-landing:focus, input.registration {
     outline: none;
-}
-
-button.add {
-    width: 25px;
-    height: 25px;
-  position: relative;
-  bottom: 60px;
-  margin-left: 240px;
 }
 
 button.submit {
     height: 25px;
     width: 100px;
+    font-size: 12px;
     margin-top: 20px;
 }
 
@@ -85,6 +82,7 @@ div.registration {
 }
 form.registration {
     margin-top: 30px;
+    display: none;
 }
 
 div.bird {
@@ -96,6 +94,9 @@ div.bird {
 
 div.cloud {
     width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .svg-container {
@@ -108,4 +109,8 @@ display: inline-block;
 position: absolute;
 top: 0;
 left: 0;
+}
+
+#formHolder {
+    min-height: 250px;
 }

@@ -1,6 +1,6 @@
 body {
     /*background: #D2EEFF; light blue*/
-    background: #E8D8FF;
+    background: #3FEBCD;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     height: 100%;
@@ -11,6 +11,7 @@ body {
 	font-size: 50px;
 	margin-bottom: 30px;
 	color: darkslateblue;
+	min-height: 72px;
 }
 
 .container-fluid {
@@ -47,9 +48,18 @@ h1.shoppingView{
 #content {
 	display: table;
 	height: 100%;
+	width: 100%;
 }
 
 #wishlist{
+    background-color: #CAC0F2;
+    border: 1px solid #BEB3EF;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    float: none;
+    display: table-cell;
+}
+
+#completelist {
     background-color: #CAC0F2;
     border: 1px solid #BEB3EF;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
@@ -143,6 +153,14 @@ span{
 	padding: 10px 25px;
 	color: rgba(75,75,75, 0.5);
 	cursor: pointer;
+}
+
+#navTabs > li:hover {
+	opacity: 0.75;
+}
+
+#navTabs >li.active:hover {
+	opacity: 1.0;
 }
 
 #navTabs > li.active, #navTabs > li.active {
@@ -509,4 +527,103 @@ span{
     -webkit-animation: shake 0.5s 2s;
 }
 
+#doneButton {
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    margin-right: 45px;
+    font-size: 16px;
+}
 
+#editButton {
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    margin-right: 45px;
+    font-size: 16px;
+}
+
+#completedItems {
+	position: absolute;
+	top: 80px;
+	bottom: 60px;
+	left: 0;
+	overflow-y: scroll;
+	padding-left: 0px;
+	padding-right: 0px;
+	right: 0;
+}
+
+.linkView {
+	bottom: 0px;
+	position: absolute;
+	height: 60px;
+	width: 100%;
+
+	color: rgb(75, 75, 75);
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #BEB3F2;
+    left: 0px;
+    margin-top: 0px;
+    z-index: 2;
+    cursor: default;
+    margin-bottom: 0px;
+}
+
+.linkView > input {
+	margin-left: 20px;
+}
+
+.fulfilledItem {
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+	background-color: #E8D8FF;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.fulfilledItem img {
+	max-height: 100px;
+	max-width: 100px;
+	border-radius: 4px;
+}
+
+.fulfilledItem > div:last-child {
+	padding-left: 0;
+	text-align: center;
+}
+
+.fulfilledItem > div {
+	text-align: center;
+}
+
+.fulfilledItem .favoriting {
+	font-size: 30px;
+	opacity: 0.35;
+	color: darkgray;
+}
+
+.fulfilledItem .favoriting.active {
+    opacity: 1.0;
+    color: red;
+    -webkit-text-fill-color: red; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(0, 0, 0, 0.37);
+}
+
+#categoryContainer > .row > div:last-child {
+	padding-left: 0px;
+}
+
+#categoryContainer > .row > div:first-child > span {
+	font-size: 16px;	
+}
+
+#completedItems {
+	scrollTop: 30px;
+}

@@ -6,7 +6,9 @@
         <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
         <!-- START TEMPLATES (n.b. we will move these out to secondary files when we can, but for now, edit here) -->
+
         <script id="category-template" type="text/x-handle-bars-template">
             <div class="col-xs-2"><span>{{name}}</span></div>
             <div class="col-xs-1 carousel-control-container">
@@ -64,7 +66,7 @@
                     </button>
                 </div>
                 <div class="wishlist-comments">
-                    <textarea class="form-control" placeholder="Comments..." rows=3></textarea>
+                    <textarea class="form-control" placeholder="Comments..." rows=3>{{comment}}</textarea>
                 </div>
                 
                 
@@ -123,6 +125,33 @@
             </div>
         </script>
 
+        <script id="completelist-template" type="text/x-handle-bars-template">
+            <h1 class="shoppingView">Your Wishlist</h1>
+            <div id="completedItems" class="container-fluid">
+
+            </div>
+            <h4 class="linkView">Share this link <input disabled value="http://herpaderp.com/lololol"></input></h4>
+        </script>
+
+
+        <script id="fulfilledItem-template" type="text/x-handle-bars-template">
+            <div class="col-xs-3">
+                <img src="{{image}}" height="100%" width="100%"></img>
+            </div>
+            <div class="col-xs-3">
+                <span>{{fulfilledQuantity}} / {{quantity}}</span>
+            </div>
+            <div class="col-xs-4">
+                <div class="wishlist-comments">
+                    <textarea class="form-control disabled" placeholder="Comments..." rows=3 disabled>{{comment}}</textarea>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                
+                <span class="glyphicon glyphicon-heart favoriting {{#if favorited}}active{{/if}}"></span>
+                
+            </div>
+        </script>
 
         <!-- END TEMPLATES -->
 
@@ -132,21 +161,70 @@
 
     <body>
 
-        <div class="container-fluid">
-            <div id="logo" class="row">BuyForBaby</div>
-            <div id="content" class="row container-height">
 
-                <div id="wishlist" class="col-xs-4">
-                
+        <!-- Landing Page -->
+        <section id="landingPage" style="display: none;">           
+            <div class="intro">
+                <h1>Look's like someone's having a party!</h1>
+                <h4 class="blurb">We'll take care of the accounting while you take care of the guest of honor.</h4>
+                <button id="createRegistry" class="btn-landing">Create a Registry</button>
+                <button id="findRegistry" class="btn-landing">Find a Registry</button>
+                <div id="formHolder">
+                    <form class="registration parents">
+                        <input class="registration" type="text" placeholder="Your first name" autofocus><br>
+                        <input class="registration" type="text" placeholder="Your last name"><br>
+                        <input class="registration" type="text" placeholder="Registry title "><br>
+                        <button class="btn-landing submit">Submit</button>
+                    </form>
+                    <form class="registration guests open">
+                        <input class="registration" type="text" placeholder="Your name *"><br>
+                        <input class="registration" type="text" placeholder="Parent's Last Name"><br>
+                        <div class="registration"> ------   OR    ------ </div>
+                        <input class="registration" type="text" placeholder="Registry Name"><br>
+                        <button class="btn-landing submit">Search</button>
+                    </form>
                 </div>
+                
 
-                <div id="giftlist" class="col-xs-8">
-                
-                </div>
 
             </div>
+            <div class="bird svg-container">
+                <img class="bird" src ="images/bird2.svg">
+            </div>
+            <div class="cloud svg-container">
+                <img class="cloud" src="images/clouds2.svg">
+            </div>
+        </section>
 
-        </div>
+
+
+        <!-- Catalogue Page -->
+        <section id="mainPage" class="container-fluid open" style="display: none;">
+            <div id="logo" class="row">
+                BuyForBaby
+                <button id="doneButton" class="btn-landing pull-right">Done</button>
+            </div>
+            <div id="content" class="row container-height">
+                <div id="wishlist" class="col-xs-5">
+                </div>
+                <div id="giftlist" class="col-xs-7"> 
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CompleteList Page -->
+        <section id="completelistpage" class="container-fluid" style="display: none;">
+            <div id="logo" class="row">
+                BuyForBaby
+                <button id="editButton" class="btn-landing pull-right">Edit</button>
+            </div>
+            <div id="content" class="row container-height">
+                <div id="completelist" class="col-xs-8 col-xs-offset-2">
+                </div>
+            </div>
+
+        </section>
 
         <!-- Vendor Scripts -->
         <script src="scripts/vendor/jquery-1.11.2.js"></script>
@@ -154,17 +232,16 @@
         <script src="scripts/vendor/backbone.js"></script>
         <script src="scripts/vendor/handlebars-v3.0.0.js"></script>
 
-        <!-- bootstrap is here at least temporarily -->
 
+        <!-- bootstrap is here at least temporarily -->
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-
         <!-- end bootstrap -->
 
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/landing-page.css">
 
         <!-- main app script -->
         <script src="scripts/main.js"></script>
@@ -187,6 +264,10 @@
         <!-- the collection of desiredItems that the user wants -->
         <script src="scripts/collections/wishlist.js"></script>
         <script src="scripts/views/wishlist.js"></script>
+
+        <!-- the collection of desiredItems that the user wants -->
+        <script src="scripts/views/completelist.js"></script>
+        <script src="scripts/views/fulfilleditem.js"></script>
 
         <!-- a collection of categories (i.e. clothing) -->
         <script src="scripts/models/metacategory.js"></script>

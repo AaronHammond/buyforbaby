@@ -23,7 +23,8 @@ BuyForBaby.Collections = BuyForBaby.Collections || {};
         		name: citem.get('name'),
         		quantity: 1,
         		favorited: false,
-        		comment: ""
+        		comment: "",
+        		fulfilledQuantity: 0
         	});
         	this.add(newDesiredItem);
         },

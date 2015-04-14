@@ -18,7 +18,8 @@ BuyForBaby.Views = BuyForBaby.Views || {};
             'click .quantDown' : "changeQuantity",
             'change .quant input' : 'changeQuantity',
             'click .favoriting': "changeFavorited",
-            'transitionend .item-remover': "removeItem"
+            'transitionend .item-remover': "removeItem",
+            "change textarea": "changeComment"
         },
 
         changeFavorited: function(e) {
@@ -28,6 +29,10 @@ BuyForBaby.Views = BuyForBaby.Views || {};
             } else {
                 this.model.set('favorited', false);
             }
+        },
+
+        changeComment: function(e) {
+            this.model.set("comment", this.$(e.currentTarget).val());
         },
 
         changeQuantity: function(e) {

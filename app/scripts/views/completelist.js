@@ -3,23 +3,20 @@ BuyForBaby.Views = BuyForBaby.Views || {};
 (function () {
     'use strict';
 
-    BuyForBaby.Views.Wishlist = Backbone.View.extend({
+    BuyForBaby.Views.CompleteList = Backbone.View.extend({
 
-        template: templates['wishlist'],
+        template: templates['completelist'],
 
         tagName: 'div',
 
-        id: 'innerWishlistContainer',
+        id: 'innerCompleteListContainer',
 
         className: '',
 
         events: {},
         
         initialize: function () {
-            this.listenTo(this.model, 'add', function() {
-                this.render();
-                this.$('#wishedItems').animate( { scrollTop: 2000 }, 2000);
-            });
+            this.listenTo(this.model, 'add', this.render);
             this.listenTo(this.model, 'remove', this.render);
         },
 
@@ -28,8 +25,8 @@ BuyForBaby.Views = BuyForBaby.Views || {};
 
             var self = this;
             this.model.forEach(function(m) {
-                var it = new BuyForBaby.Views.DesiredItem({ model: m });
-                self.$el.find('#wishedItems').append(it.render().el);
+                var it = new BuyForBaby.Views.FulfilledItem({ model: m });
+                self.$el.find('#completedItems').append(it.render().el);
             });
 
             this.$('.quant-spinner .quant').on('focus', function(e) {
