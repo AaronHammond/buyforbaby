@@ -4,16 +4,16 @@ html{
   height: 100%;
 }
 
-html, body {
+/*html, body {
     margin:0;
     padding: 0;
 
 }
 body {
-  	min-height: 100%;
-	background-color: #5FE8C0;
-    color: #F4F4F4;	
-}
+    min-height: 100%;
+    background-color: #5FE8C0;
+    color: #F4F4F4; 
+}*/
 
 
 .intro {
@@ -37,6 +37,7 @@ body {
     font-size: 16px;
     margin: 10px auto;
 
+    PADDING-BOTTOM: 30px;
 }
 
 .btn-landing {
@@ -92,7 +93,7 @@ div.dynamic {
 
 div.registration {
     margin-top: 10px;
-    font-size: 16px;
+    font-size: 12px;
 
 }
 form.registration {
@@ -110,6 +111,7 @@ div.cloud {
     width: 100%;
     position: absolute;
     left: 0;
+    background-color: #98F2D3;
 }
 
 .svg-container {
