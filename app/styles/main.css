@@ -311,6 +311,7 @@ span.label{
     border: none;
     background-color: lightgrey;
     box-shadow: 0 5px 7px 0 rgba(0, 0, 0, 0.19);
+    color: rgba(75,75,75, 1.0);
 }
 
 .item-adder:active, .item-remover:active {
@@ -559,6 +560,11 @@ span.label{
 	right: 0;
 }
 
+#completedItems span {
+	color: rgba(75,75,75, 1.0);
+	font-size: 24px;
+}
+
 .linkView {
 	bottom: 0px;
 	position: absolute;
@@ -615,9 +621,9 @@ span.label{
 }
 
 .fulfilledItem .favoriting {
-	font-size: 30px;
+	font-size: 30px !important;
 	opacity: 0.35;
-	color: darkgray;
+	color: darkgray !important;
 }
 
 .fulfilledItem .favoriting.active {
