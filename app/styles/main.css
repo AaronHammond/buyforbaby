@@ -406,8 +406,8 @@ span.label{
 
 .desiredItem img {
 	border-radius: 4px;
-	max-height: 130px;
-	min-height: 130px;
+	max-height: 100px;
+	min-height: 100px;
 }
 
 /*
@@ -552,7 +552,7 @@ span.label{
 #completedItems {
 	position: absolute;
 	top: 80px;
-	bottom: 60px;
+	bottom: 70px;
 	left: 0;
 	overflow-y: scroll;
 	padding-left: 0px;
@@ -568,7 +568,7 @@ span.label{
 .linkView {
 	bottom: 0px;
 	position: absolute;
-	height: 60px;
+	height: 70px;
 	width: 100%;
 
 	color: #F4F4F4;
