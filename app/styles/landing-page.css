@@ -7,10 +7,12 @@ html{
 html, body {
     margin:0;
     padding: 0;
+
 }
 body {
   	min-height: 100%;
-	background-color: #3FEBCD;	
+	background-color: #5FE8C0;
+    color: #F4F4F4;	
 }
 
 
@@ -24,12 +26,21 @@ body {
 
 }
 
+.title-landing {
+    font-family: 'Arvo', serif;
+    margin: -20px auto 15px auto;
+    width: 11em;
+}
+
 .blurb {
-    font-weight: 600;
+    width: 18em;
+    font-size: 16px;
+    margin: 10px auto;
+
 }
 
 .btn-landing {
-    color:white;
+    color:#F4F4F4;;
     font-size: 16px;
     background-color: #C5B5D9;
     height: 50px;
@@ -44,9 +55,11 @@ body {
     cursor: pointer;
     opacity: 0.91;
 }
+
+
 .btn-landing:active {
-    background-color: #BEB3F2;
     opacity: 1.0;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.27);
 }
 .btn-landing:focus, input.registration {
     outline: none;
@@ -79,9 +92,10 @@ div.dynamic {
 
 div.registration {
     margin-top: 10px;
+    font-size: 16px;
+
 }
 form.registration {
-    margin-top: 30px;
     display: none;
 }
 
@@ -95,7 +109,6 @@ div.bird {
 div.cloud {
     width: 100%;
     position: absolute;
-    bottom: 0;
     left: 0;
 }
 
@@ -113,4 +126,5 @@ left: 0;
 
 #formHolder {
     min-height: 250px;
+    margin-top: 20px;
 }

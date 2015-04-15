@@ -1,17 +1,20 @@
 body {
-    /*background: #D2EEFF; light blue*/
-    background: #3FEBCD;
+    background: #5FE8C0;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     height: 100%;
 }
 
 #logo {
-	font-family: 'Lobster', cursive;
+	font-family: 'Pacifico', cursive;
 	font-size: 50px;
 	margin-bottom: 30px;
-	color: darkslateblue;
+	color: #F4F4F4;;
 	min-height: 72px;
+}
+
+.kerning {
+  letter-spacing: -14.5px;
 }
 
 .container-fluid {
@@ -28,7 +31,7 @@ body > .container-fluid {
 }
 
 h1.shoppingView{
-    color: rgb(75, 75, 75);
+    color: #F4F4F4; 
     text-align: center;
     font-weight: 600;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
@@ -82,7 +85,7 @@ h1.shoppingView{
 	overflow-y: scroll;
 }
 
-span{
+span.label{
     color: rgba(74, 74, 74, 0.75);
     text-align: center;
     font-size: 16pt;
@@ -90,7 +93,7 @@ span{
 }
 
 .btn-default {
-    color:white;
+    color:#F4F4F4;;
     background-color:rgba(0, 139, 255, 0.0);
     box-shadow: none;
     border: none;
@@ -110,7 +113,7 @@ span{
 }
 
 .btn-default > span {
-	color: #FEF9FD;
+	color: #F4F4F4;
 	cursor: pointer;
 }
 
@@ -120,7 +123,7 @@ span{
 
 #navTabs {
 	font-size: 14pt;
-    color: white;
+    color: #F4F4F4;;
     text-align: center;
     border: none;
     padding-left: 30px;
@@ -164,7 +167,7 @@ span{
 }
 
 #navTabs > li.active, #navTabs > li.active {
-	color: #FEF9FD;
+	color: #F4F4F4;
 }
 
 #navTabs > li.active > a {
@@ -562,7 +565,7 @@ span{
 	height: 60px;
 	width: 100%;
 
-	color: rgb(75, 75, 75);
+	color: #F4F4F4;
     text-align: center;
     font-weight: 600;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
@@ -577,6 +580,7 @@ span{
 }
 
 .linkView > input {
+    color: rgb(75, 75, 75);
 	margin-left: 20px;
 }
 
