@@ -83,6 +83,7 @@ h1.shoppingView{
 	top: 80px;
 	bottom: 0px;
 	overflow-y: scroll;
+	width: 100%;
 }
 
 span.label{
@@ -134,6 +135,7 @@ span.label{
 	left: 0;
 	right: 0;
 	top: 1px;
+	z-index: 2;
 }
 
 #navTabs > li > a {
