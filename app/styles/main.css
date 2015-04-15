@@ -1,9 +1,8 @@
 body {
-    background: white;
+    background: #F4F4F4;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     height: 100%;
-    font-size: large;
     color: #7b7b7c;
     font-family: 'Lucinda Sans Unicode', sans-serif;
 }
@@ -317,7 +316,7 @@ span.label{
     box-shadow: none;
     border: none;
     background-color: #C5B5D9;
-    border-color: white;
+    border-color: #F4F4F4;
     border-width: 2px;
     /* background-color: rgb(186, 184, 184); */
     box-shadow: 0 5px 7px 0 rgba(0, 0, 0, 0.19);

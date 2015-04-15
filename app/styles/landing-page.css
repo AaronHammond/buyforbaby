@@ -36,8 +36,7 @@ body {
     width: 18em;
     font-size: 16px;
     margin: 10px auto;
-
-    PADDING-BOTTOM: 30px;
+    padding-bottom: 10px;
 }
 
 .btn-landing {
@@ -93,7 +92,7 @@ div.dynamic {
 
 div.registration {
     margin-top: 10px;
-    font-size: 12px;
+    font-size: 16px;
 
 }
 form.registration {
