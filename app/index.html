@@ -166,7 +166,25 @@
 
         <!-- Landing Page -->
         <section id="landingPage" style="display: none;">  
-            <div id="landingPage-bg">         
+            <div id="landing-banner">
+              <ul id="landing-banner">
+                <li class="banner-link" >
+                  <a href="/">About</a> <!-- TODO -->
+                </li>
+                <li >
+                  <div class="bird svg-container">
+                    <img class="bird" src ="images/bird2.svg">
+                  </div>
+                </li>
+                <li id="landing-logo" class="logo">
+                    Bu<span class="kerning">y</span>ForBaby
+                </li>                
+                <li class="banner-link">
+                  <a href="/">Contact</a>  <!-- TODO -->
+                </li>
+              </ul>
+            </div>
+            <div id="landing-1">         
                 <div class="intro">
                     <h1 class="title-landing">Looks like someone's having a party!</h1>
                     <h4 class="blurb">We'll take care of the accounting while you take care of the guest of honor.</h4>
@@ -188,9 +206,6 @@
                         </form>
                     </div>
                 </div>
-                <div class="bird svg-container">
-                    <img class="bird" src ="images/bird2.svg">
-                </div>
                 <div class="cloud svg-container">
                     <img class="cloud" src="images/clouds2.svg">
                 </div>
@@ -201,7 +216,7 @@
 
         <!-- Catalogue Page -->
         <section id="mainPage" class="container-fluid" style="display: none;">
-            <div id="logo" class="row">
+            <div class="logo row">
                 Bu<span class="kerning">y</span>ForBaby
                 <button id="doneButton" class="btn-landing pull-right">Done Adding Items</button>
             </div>
@@ -216,7 +231,7 @@
 
         <!-- CompleteList Page -->
         <section id="completelistpage" class="container-fluid" style="display: none;">
-            <div id="logo" class="row">
+            <div class="logo row">
                 Bu<span class="kerning">y</span>ForBaby
                 <button id="editButton" class="btn-landing pull-right">Add Items</button>
             </div>            

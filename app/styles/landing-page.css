@@ -1,28 +1,52 @@
 
-/*bird wing color: #C5B5D9*/
-html{
-  height: 100%;
+/*
+bird wing color: #C5B5D9
+turquoise: #98F2D3
+lightblue: #E8FFFC
+*/
+
+#landing-banner {
+    width: 100%;
+    height: 100px;
+    padding: 0px;
+    margin-top: 20px;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 }
 
-/*html, body {
-    margin:0;
-    padding: 0;
+#landing-banner > li {
+    list-style: none;
+    float:left;
+    text-align: center;
+}
+
+.banner-link {
+    margin: auto;
+}
+
+#landing-logo {
+    font-size: 31px;
+    margin-top: 35px;
+    z-index: 2;
+}
+
+
+#landing-logo > .kerning {
+    letter-spacing: -8px;
+}
+
+#landing-1 {
 
 }
-body {
-    min-height: 100%;
-    background-color: #5FE8C0;
-    color: #F4F4F4; 
-}*/
-
 
 .intro {
     font-size: 18pt;
     width: 35em;
     text-align: center;
     margin: 0 auto 0 auto;
-    padding-left: 395px;
-    padding-top: 125px;
+    padding-top: 120px;
 
 }
 
@@ -100,17 +124,16 @@ form.registration {
 }
 
 div.bird {
-    position: fixed;
-    top:200px;
-    left: 150px;
-    width: 30%;
+    position: absolute;
+    margin: -31px 0px;
+    width: 150px;
+    z-index: 1;
 }
 
 div.cloud {
     width: 100%;
     position: absolute;
     left: 0;
-    background-color: #98F2D3;
 }
 
 .svg-container {
