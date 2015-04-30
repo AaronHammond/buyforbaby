@@ -3,6 +3,7 @@
 bird wing color: #C5B5D9
 turquoise: #98F2D3
 lightblue: #E8FFFC
+medium turquoise: #A1EDE3;
 */
 
 #landing-banner {
@@ -23,7 +24,10 @@ lightblue: #E8FFFC
 }
 
 .banner-link {
-    margin: auto;
+    margin: 10px auto;
+    font-family: 'Arvo', serif;
+    font-size: 19pt;
+    color: darkgray;
 }
 
 #landing-logo {
@@ -47,9 +51,15 @@ lightblue: #E8FFFC
     text-align: center;
     margin: 0 auto 0 auto;
     padding-top: 120px;
-
 }
 
+.intro-flex {
+    width: 100%;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
 .title-landing {
     font-family: 'Arvo', serif;
     margin: -20px auto 15px auto;
@@ -136,6 +146,10 @@ div.cloud {
     left: 0;
 }
 
+img.cloud {
+    background: #A1EDE3;
+}
+
 .svg-container {
 display: inline-block;
 position: relative;
@@ -151,4 +165,8 @@ left: 0;
 #formHolder {
     min-height: 250px;
     margin-top: 20px;
+}
+
+#about-section {
+    /*height: 10;*/
 }

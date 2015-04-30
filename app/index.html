@@ -11,6 +11,25 @@
 
         <!-- START TEMPLATES (n.b. we will move these out to secondary files when we can, but for now, edit here) -->
 
+        <script id="landing-template" type="text/x-handle-bars-template">
+            <ul id="landing-banner">
+            <li class="banner-link" >
+              <a id="about">About</a>
+            </li>
+            <li >
+              <div class="bird svg-container">
+                <img class="bird" src ="images/bird2.svg">
+              </div>
+            </li>
+            <li id="landing-logo" class="logo">
+                Bu<span class="kerning">y</span>ForBaby
+            </li>                
+            <li class="banner-link">
+              <a id="team">The Team</a> <!--TODO need to center -->
+            </li>
+          </ul>
+        </script>
+
         <script id="category-template" type="text/x-handle-bars-template">
             <div class="col-xs-2"><span>{{name}}</span></div>
             <div class="col-xs-1 carousel-control-container">
@@ -163,28 +182,11 @@
 
     <body>
 
-
         <!-- Landing Page -->
         <section id="landingPage" style="display: none;">  
-            <div id="landing-banner">
-              <ul id="landing-banner">
-                <li class="banner-link" >
-                  <a href="/">About</a> <!-- TODO -->
-                </li>
-                <li >
-                  <div class="bird svg-container">
-                    <img class="bird" src ="images/bird2.svg">
-                  </div>
-                </li>
-                <li id="landing-logo" class="logo">
-                    Bu<span class="kerning">y</span>ForBaby
-                </li>                
-                <li class="banner-link">
-                  <a href="/">Contact</a>  <!-- TODO -->
-                </li>
-              </ul>
+            <div id="banner">   
             </div>
-            <div id="landing-1">         
+            <div class="intro-flex">
                 <div class="intro">
                     <h1 class="title-landing">Looks like someone's having a party!</h1>
                     <h4 class="blurb">We'll take care of the accounting while you take care of the guest of honor.</h4>
@@ -205,11 +207,15 @@
                             <button class="btn-landing submit">Search</button>
                         </form>
                     </div>
+                    <!-- <div id="about-section">
+                        About Info
+                    </div> -->
                 </div>
+            </div>
                 <div class="cloud svg-container">
                     <img class="cloud" src="images/clouds2.svg">
                 </div>
-            </div>
+
         </section>
 
 
@@ -265,6 +271,9 @@
 
         <!-- script to compile handlebars templates -->
         <script src="scripts/templates.js"></script>
+
+        <!-- landing page actions -->
+        <script src="scripts/views/landing.js"></script>
 
         <!-- a specific item in the catalogue -->
         <script src="scripts/models/item.js"></script>
