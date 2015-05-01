@@ -14,7 +14,8 @@ BuyForBaby.Views = BuyForBaby.Views || {};
         className: '',
 
         events: {
-            "click #about": "goToAboutSection"
+            "click #about": "goToAboutSection",
+            "click #team": "goToTeamSection"
         },
         
         render: function() {
@@ -23,8 +24,13 @@ BuyForBaby.Views = BuyForBaby.Views || {};
         },
 
         goToAboutSection: function() {
+            var aboutSection = $(document).height() - $(window).height()*2 +120;
+            $("html, body").animate({scrollTop: aboutSection}, "slow");
+        },
+
+        goToTeamSection: function() {
             $("html, body").animate({scrollTop: $(document).height()}, "slow");
-        }
+        },
     });
 
 })();

@@ -28,6 +28,7 @@ medium turquoise: #A1EDE3;
     font-family: 'Arvo', serif;
     font-size: 19pt;
     color: darkgray;
+    width: 20vh;
 }
 
 #landing-logo {
@@ -47,10 +48,8 @@ medium turquoise: #A1EDE3;
 
 .intro {
     font-size: 18pt;
-    width: 35em;
     text-align: center;
-    margin: 0 auto 0 auto;
-    padding-top: 120px;
+    width: 100%;
 }
 
 .intro-flex {
@@ -59,6 +58,99 @@ medium turquoise: #A1EDE3;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+}
+
+.signup {
+    padding-top: 120px;
+    margin: 0 auto 0 auto;
+    height: calc(100vh -120px);
+}
+
+
+#about-section {
+    width: 100%;
+    height: 75vh;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+@media all and (max-width: 700px) {
+    #about-section {
+        flex-direction: column;
+        margin: 0px auto 15px;
+    }
+}
+
+.about-header {
+    width: 12em;
+    text-align: center;
+    float: left;
+    margin: 0px 40px 15px 40px;
+}
+
+.about-header-text, #team-section {
+    font-family: 'Arvo', serif;
+    
+}
+.about-blurb {
+    font-size: 14pt;
+    text-align: center;
+}
+
+#team-section {
+    height: 50vh;
+}
+
+@media all and (max-height: 400px)  { 
+    .signup {
+        min-height:  520px;
+    }
+    #about-section {
+        min-height: 250px;
+    }
+    #team-section  {
+       min-height: 100px;   
+    }
+}
+
+@media all and (max-width: 700px) {
+    .signup {
+        min-height:  520px;
+    }
+    .about-header {
+        margin: 0px auto 15px;
+    }
+    #about-section {
+        min-height: 600px;
+    }
+    #team-section {
+        
+        min-height: 300px;   
+    }
+    #team-header  {
+        margin: auto;
+       width: 16em;
+    }
+    #teamnames {
+        margin: auto;
+        width: 14em;
+    }
+}
+
+#custom {
+    order:1;
+}
+
+#organize {
+    order:2;
+}
+
+#share {
+    order:3;
 }
 .title-landing {
     font-family: 'Arvo', serif;
@@ -72,6 +164,10 @@ medium turquoise: #A1EDE3;
     margin: 10px auto;
     padding-bottom: 10px;
 }
+
+
+
+/*FORM STYLES*/
 
 .btn-landing {
     color:#F4F4F4;;
@@ -167,6 +263,3 @@ left: 0;
     margin-top: 20px;
 }
 
-#about-section {
-    /*height: 10;*/
-}
