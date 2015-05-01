@@ -45,6 +45,10 @@ div {
   letter-spacing: -14.5px;
 }
 
+#main-logo:hover {
+    cursor: pointer;
+}
+
 .container-fluid {
     position: absolute;
     top: 0;

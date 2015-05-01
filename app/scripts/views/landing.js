@@ -31,6 +31,8 @@ BuyForBaby.Views = BuyForBaby.Views || {};
         goToTeamSection: function() {
             $("html, body").animate({scrollTop: $(document).height()}, "slow");
         },
+
+        
     });
 
 })();

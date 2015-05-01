@@ -50,6 +50,11 @@ window.BuyForBaby = Backbone.Router.extend({
         $('#doneButton').off().on('click', function() {
             app.navigate('wishlist', {trigger: true});
         });
+
+        $('.logo').off().on('click', function() {
+            app.navigate('wishlist', {trigger: true});
+        });
+
     },
 
     viewLandingPage: function() {
