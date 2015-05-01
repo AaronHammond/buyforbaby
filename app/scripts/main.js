@@ -57,12 +57,12 @@ window.BuyForBaby = Backbone.Router.extend({
 
         $('body > section.open').fadeOut('slow', function() {
             $('#landingPage').fadeIn('slow', function() {
+
                 $('#findRegistry').off().on('click', function() {
                     $('form.registration.open').fadeOut('slow', function() {
                         $('form.registration.guests').fadeIn('slow').addClass('open');
                     }).removeClass('open');
                 });
-
 
                 $('#createRegistry').off().on('click', function() {
                     $('form.registration.open').fadeOut('slow', function() {
