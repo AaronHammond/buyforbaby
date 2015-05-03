@@ -8,8 +8,28 @@
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
 
         <!-- START TEMPLATES (n.b. we will move these out to secondary files when we can, but for now, edit here) -->
+
+        <script id="landing-template" type="text/x-handle-bars-template">
+            <ul id="landing-banner">
+            <li class="banner-link" >
+              <a id="about">About</a>
+            </li>
+            <li >
+              <div class="bird svg-container">
+                <img class="bird" src ="images/bird2.svg">
+              </div>
+            </li>
+            <li id="landing-logo" class="logo">
+                Bu<span class="kerning">y</span>ForBaby
+            </li>                
+            <li class="banner-link">
+              <a id="team">The Team</a> <!--TODO need to center -->
+            </li>
+          </ul>
+        </script>
 
         <script id="category-template" type="text/x-handle-bars-template">
             <div class="col-xs-2"><span>{{name}}</span></div>
@@ -163,45 +183,73 @@
 
     <body>
 
-
         <!-- Landing Page -->
         <section id="landingPage" style="display: none;">  
-            <div id="landingPage-bg">         
+            <div id="banner">   
+            </div>
+            <div class="intro-flex">
                 <div class="intro">
-                    <h1 class="title-landing">Looks like someone's having a party!</h1>
-                    <h4 class="blurb">We'll take care of the accounting while you take care of the guest of honor.</h4>
-                    <button id="createRegistry" class="btn-landing">Create a Registry</button>
-                    <button id="findRegistry" class="btn-landing">Find a Registry</button>
-                    <div id="formHolder">
-                        <form class="registration parents">
-                            <input class="registration" type="text" placeholder="Your first name" autofocus><br>
-                            <input class="registration" type="text" placeholder="Your last name"><br>
-                            <input class="registration" type="text" placeholder="Registry title "><br>
-                            <button class="btn-landing submit">Create</button>
-                        </form>
-                        <form class="registration guests open">
-                            <input class="registration" type="text" placeholder="Your name *" autofocus><br>
-                            <input class="registration" type="text" placeholder="Parent's Last Name"><br>
-                            <div class="registration">or</div>
-                            <input class="registration" type="text" placeholder="Registry Name"><br>
-                            <button class="btn-landing submit">Search</button>
-                        </form>
+                    <div class="signup">
+                        <h1 class="title-landing">Looks like someone's having a party!</h1>
+                        <h4 class="blurb">We'll take care of the accounting while you take care of the guest of honor.</h4>
+                        <button id="createRegistry" class="btn-landing">Create a Registry</button>
+                        <button id="findRegistry" class="btn-landing">Find a Registry</button>
+                        <div id="formHolder">
+                            <form class="registration parents">
+                                <input class="registration" type="text" placeholder="Your first name" autofocus><br>
+                                <input class="registration" type="text" placeholder="Your last name"><br>
+                                <input class="registration" type="text" placeholder="Registry title "><br>
+                                <button class="btn-landing submit">Create</button>
+                            </form>
+                            <form class="registration guests open">
+                                <input class="registration" type="text" placeholder="Your name *" autofocus><br>
+                                <input class="registration" type="text" placeholder="Parent's Last Name"><br>
+                                <div class="registration">or</div>
+                                <input class="registration" type="text" placeholder="Registry Name"><br>
+                                <button class="btn-landing submit">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="about-section">
+                        <div class="about-header">
+                            <i class="fa fa-heart-o"></i>
+                            <span class="about-header-text">
+                                Customize
+                            </span>
+                            <div id="custom" class="about-blurb">Make sure your list is just right. BuyForBaby lets you add any item from anywhere.</div>
+                        </div>
+                        <div class="about-header">
+                            <i class="fa fa-list-ul"></i>
+                            <span class="about-header-text">
+                                Organize
+                            </span>
+                            <div id="organize" class="about-blurb">Have one less thing to think about. We'll keep track of who bought what.</div>
+                        </div>
+                        <div class="about-header">
+                            <i class="fa fa-users"></i>
+                            <span class="about-header-text">
+                                Share
+                            </span>
+                            <div id="share" class="about-blurb">Keep family and friends in the loop, so they know exactly what your little one still needs.</div>
+                        </div>
+                    </div>
+                    <div id="team-section">
+                        <div id="team-header">BuyForBaby has been created with love by</div>
+                        <div id="teamnames">Lia Coleman, Aaron Hammond, Nathalie Huynh, and Priya Kalluri</div>
                     </div>
                 </div>
-                <div class="bird svg-container">
-                    <img class="bird" src ="images/bird2.svg">
-                </div>
+            </div>
                 <div class="cloud svg-container">
                     <img class="cloud" src="images/clouds2.svg">
                 </div>
-            </div>
+
         </section>
 
 
 
         <!-- Catalogue Page -->
         <section id="mainPage" class="container-fluid" style="display: none;">
-            <div id="logo" class="row">
+            <div id = "main-logo" class="logo row">
                 Bu<span class="kerning">y</span>ForBaby
                 <button id="doneButton" class="btn-landing pull-right">Done Adding Items</button>
             </div>
@@ -216,7 +264,7 @@
 
         <!-- CompleteList Page -->
         <section id="completelistpage" class="container-fluid" style="display: none;">
-            <div id="logo" class="row">
+            <div class="logo row">
                 Bu<span class="kerning">y</span>ForBaby
                 <button id="editButton" class="btn-landing pull-right">Add Items</button>
             </div>            
@@ -250,6 +298,9 @@
 
         <!-- script to compile handlebars templates -->
         <script src="scripts/templates.js"></script>
+
+        <!-- landing page actions -->
+        <script src="scripts/views/landing.js"></script>
 
         <!-- a specific item in the catalogue -->
         <script src="scripts/models/item.js"></script>

@@ -1,31 +1,158 @@
 
-/*bird wing color: #C5B5D9*/
-html{
-  height: 100%;
+/*
+bird wing color: #C5B5D9
+turquoise: #98F2D3
+lightblue: #E8FFFC
+medium turquoise: #A1EDE3;
+*/
+
+#landing-banner {
+    width: 100%;
+    height: 100px;
+    padding: 0px;
+    margin-top: 20px;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 }
 
-/*html, body {
-    margin:0;
-    padding: 0;
+#landing-banner > li {
+    list-style: none;
+    float:left;
+    text-align: center;
+}
+
+.banner-link {
+    margin: 10px auto;
+    font-family: 'Arvo', serif;
+    font-size: 19pt;
+    color: darkgray;
+    width: 20vh;
+}
+
+#landing-logo {
+    font-size: 31px;
+    margin-top: 35px;
+    z-index: 2;
+    cursor: auto;
+}
+
+
+#landing-logo > .kerning {
+    letter-spacing: -8px;
+}
+
+#landing-1 {
 
 }
-body {
-    min-height: 100%;
-    background-color: #5FE8C0;
-    color: #F4F4F4; 
-}*/
-
 
 .intro {
     font-size: 18pt;
-    width: 35em;
     text-align: center;
-    margin: 0 auto 0 auto;
-    padding-left: 395px;
-    padding-top: 125px;
-
+    width: 100%;
 }
 
+.intro-flex {
+    width: 100%;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.signup {
+    padding-top: 120px;
+    margin: 0 auto 0 auto;
+    height: calc(100vh -120px);
+}
+
+
+#about-section {
+    width: 100%;
+    height: 75vh;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+@media all and (max-width: 700px) {
+    #about-section {
+        flex-direction: column;
+        margin: 0px auto 15px;
+    }
+}
+
+.about-header {
+    width: 12em;
+    text-align: center;
+    float: left;
+    margin: 0px 40px 15px 40px;
+}
+
+.about-header-text, #team-section {
+    font-family: 'Arvo', serif;
+    
+}
+.about-blurb {
+    font-size: 14pt;
+    text-align: center;
+}
+
+#team-section {
+    height: 50vh;
+}
+
+@media all and (max-height: 400px)  { 
+    .signup {
+        min-height:  520px;
+    }
+    #about-section {
+        min-height: 250px;
+    }
+    #team-section  {
+       min-height: 100px;   
+    }
+}
+
+@media all and (max-width: 700px) {
+    .signup {
+        min-height:  520px;
+    }
+    .about-header {
+        margin: 0px auto 15px;
+    }
+    #about-section {
+        min-height: 600px;
+    }
+    #team-section {
+        
+        min-height: 300px;   
+    }
+    #team-header  {
+        margin: auto;
+       width: 16em;
+    }
+    #teamnames {
+        margin: auto;
+        width: 14em;
+    }
+}
+
+#custom {
+    order:1;
+}
+
+#organize {
+    order:2;
+}
+
+#share {
+    order:3;
+}
 .title-landing {
     font-family: 'Arvo', serif;
     margin: -20px auto 15px auto;
@@ -38,6 +165,10 @@ body {
     margin: 10px auto;
     padding-bottom: 10px;
 }
+
+
+
+/*FORM STYLES*/
 
 .btn-landing {
     color:#F4F4F4;;
@@ -100,17 +231,20 @@ form.registration {
 }
 
 div.bird {
-    position: fixed;
-    top:200px;
-    left: 150px;
-    width: 30%;
+    position: absolute;
+    margin: -31px 0px;
+    width: 150px;
+    z-index: 1;
 }
 
 div.cloud {
     width: 100%;
     position: absolute;
     left: 0;
-    background-color: #98F2D3;
+}
+
+img.cloud {
+    background: #A1EDE3;
 }
 
 .svg-container {
@@ -129,3 +263,4 @@ left: 0;
     min-height: 250px;
     margin-top: 20px;
 }
+

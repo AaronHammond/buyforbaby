@@ -19,7 +19,8 @@ BuyForBaby.Views = BuyForBaby.Views || {};
             'change .quant input' : 'changeQuantity',
             'click .favoriting': "changeFavorited",
             'transitionend .item-remover': "removeItem",
-            "change textarea": "changeComment"
+            "change textarea": "changeComment",
+            "keypress": "updateQuant"
         },
 
         changeFavorited: function(e) {
@@ -75,6 +76,12 @@ BuyForBaby.Views = BuyForBaby.Views || {};
             if(this.$('.item-remover:active').length) {
                 this.vent.trigger('removeDesiredItem', this.model);
             }  
+        },
+
+        updateQuant: function(e) {
+            if ((e.which == '13') && ($(e.target.offsetParent).hasClass("quant"))) {
+                $(e.target).blur();
+            }
         },
 
         initialize: function () {

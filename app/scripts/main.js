@@ -50,17 +50,24 @@ window.BuyForBaby = Backbone.Router.extend({
         $('#doneButton').off().on('click', function() {
             app.navigate('wishlist', {trigger: true});
         });
+
+        $('.logo').off().on('click', function() {
+            app.navigate('wishlist', {trigger: true});
+        });
+
     },
 
     viewLandingPage: function() {
+        $('#banner').html(new BuyForBaby.Views.Landing().render().$el);
+
         $('body > section.open').fadeOut('slow', function() {
             $('#landingPage').fadeIn('slow', function() {
+
                 $('#findRegistry').off().on('click', function() {
                     $('form.registration.open').fadeOut('slow', function() {
                         $('form.registration.guests').fadeIn('slow').addClass('open');
                     }).removeClass('open');
                 });
-
 
                 $('#createRegistry').off().on('click', function() {
                     $('form.registration.open').fadeOut('slow', function() {
@@ -77,7 +84,7 @@ window.BuyForBaby = Backbone.Router.extend({
             }).addClass('open');
         }).removeClass('open');
     },
-
+    
     viewWishlist: function() {
         $('#completelist').html(new BuyForBaby.Views.CompleteList({ model: this.wishlist }).render().$el);
         $('body > section.open').fadeOut('slow', function() {
