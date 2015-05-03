@@ -34,7 +34,7 @@ BuyForBaby.Views = BuyForBaby.Views || {};
         },
 
         updateCarousel: function() {
-            var offsetInc = 100 / (this.model.get('containedItems').length);
+            var offsetInc = 100 / (3);
             var $firstItem = $(this.$el.find('.categorizedItem')[0]);
             var offset = -1 * (this.carouselPosition * offsetInc);
             $firstItem.animate({'margin-left': offset + '%'});

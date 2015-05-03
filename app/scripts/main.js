@@ -123,12 +123,17 @@ function loadData() {
         
         var items = [new BuyForBaby.Models.Item({
                 name: 'generic ' + cat, 
-                image: 'images/Generic' + cat + '.jpg'
+                image: 'images/Generic' + cat + '.jpg',
+                source: "Any store",
+                price: "Any price"
             })];
         for(var i = 0; i < 5; i++) {
             var randomItem = new BuyForBaby.Models.Item({
                 name: cat + ' ' + i,
-                image: 'images/' + cat + '_' + i + '.jpg'
+                image: 'images/' + cat + '_' + i + '.jpg',
+                source: "Amazon",
+                link: "http://www.amazon.com/derp",
+                price: "$15"
             });
             items.push(randomItem);
         }
@@ -152,12 +157,17 @@ function loadData() {
         
         var items = [new BuyForBaby.Models.Item({
                 name: 'generic ' + cat, 
-                image: 'images/Generic' + cat + '.jpg'
+                image: 'images/Generic' + cat + '.jpg',
+                source: "Any store",
+                price: "Any price"
             })];
         for(var i = 0; i < 5; i++) {
             var randomItem = new BuyForBaby.Models.Item({
                 name: cat + ' ' + i,
-                image: 'images/' + cat + '_' + i + '.jpg'
+                image: 'images/' + cat + '_' + i + '.jpg',
+                source: "Amazon",
+                link: "http://www.amazon.com/derp",
+                price: "$15"
             });
             items.push(randomItem);
         }
@@ -181,13 +191,18 @@ function loadData() {
         
         var items = [new BuyForBaby.Models.Item({
                 name: 'generic ' + cat, 
-                image: 'images/Generic' + cat + '.jpg'
+                image: 'images/Generic' + cat + '.jpg',
+                source: "Any store",
+                price: "Any price"
             })];
 
         for(var i = 0; i < 5; i++) {
             var randomItem = new BuyForBaby.Models.Item({
                 name: cat + ' ' + i,
-                image: 'images/' + cat + '_' + i + '.jpg'
+                image: 'images/' + cat + '_' + i + '.jpg',
+                source: "Amazon",
+                link: "http://www.amazon.com/derp",
+                price: "$15"
             });
             items.push(randomItem);
         }

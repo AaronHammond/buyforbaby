@@ -75,7 +75,12 @@
                     <textarea class="form-control" placeholder="Comments..." rows=3>{{comment}}</textarea>
                 </div>
                 <div class="wishlist-sourcing">
-                    <a href="amazon.com">Amazon</a> | $15
+                    {{#if link}}
+                        <a href="{{link}}">{{source}}</a>
+                    {{else}}
+                        <span>{{source}}</span>
+                    {{/if}}
+                     | {{price}}
                 </div>
             </div>
             <div class="col-xs-1">
@@ -119,6 +124,14 @@
                 </div>
                 <div class="item-back" style="background: linear-gradient(rgba(0, 0, 200, 0.5), rgba(0, 0, 200, 0.5)), url({{image}}); background-size: cover;">
                     <button class="item-adder">+</button>
+                    <div class="catalogue-sourcing">
+                        {{#if link}}
+                            <a href="{{link}}">{{source}}</a>
+                        {{else}}
+                            <span>{{source}}</span>
+                        {{/if}}
+                         | {{price}}
+                    </div>
                 </div>
             </div>
         </script>

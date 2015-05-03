@@ -24,7 +24,10 @@ BuyForBaby.Collections = BuyForBaby.Collections || {};
         		quantity: 1,
         		favorited: false,
         		comment: "",
-        		fulfilledQuantity: 0
+        		fulfilledQuantity: 0,
+                price: citem.get('price'),
+                source: citem.get('source'),
+                link: citem.get('link')
         	});
         	this.add(newDesiredItem);
         },
