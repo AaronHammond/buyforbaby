@@ -76,7 +76,7 @@
                 </div>
                 <div class="wishlist-sourcing">
                     {{#if link}}
-                        <a href="{{link}}">{{source}}</a>
+                        <a href="{{link}}" target="_blank">{{source}}</a>
                     {{else}}
                         <span>{{source}}</span>
                     {{/if}}
@@ -126,7 +126,7 @@
                     <button class="item-adder">+</button>
                     <div class="catalogue-sourcing">
                         {{#if link}}
-                            <a href="{{link}}">{{source}}</a>
+                            <a href="{{link}}" target="_blank">{{source}}</a>
                         {{else}}
                             <span>{{source}}</span>
                         {{/if}}
@@ -164,7 +164,7 @@
         </script>
 
         <script id="completelist-template" type="text/x-handle-bars-template">
-            <h1 class="shoppingView">Your Wishlist</h1>
+            <h1 class="shoppingView">Your Registry</h1>
             <div id="completedItems" class="container-fluid">
 
             </div>
@@ -174,19 +174,25 @@
 
         <script id="fulfilledItem-template" type="text/x-handle-bars-template">
             <div class="col-xs-3">
-                <img src="{{image}}" height="100%" width="100%"></img>
+                <img src="{{image}}"></img>
             </div>
             <div class="col-xs-3">
                 <span>{{fulfilledQuantity}} / {{quantity}}</span>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-3">
                 <div class="wishlist-comments">
                     <textarea class="form-control disabled" placeholder="Comments..." rows=3 disabled>{{comment}}</textarea>
                 </div>
             </div>
-            <div class="col-xs-2">
+            <div class="col-xs-3">
+                <div class="gifter-list">
+                    {{#each gifters}}
+                        <span>{{name}} bought {{qty}}</span>
+                    {{else}}
+                        <span>No buyers yet</span>
+                    {{/each}}
+                </div>
                 
-                <span class="glyphicon glyphicon-heart favoriting {{#if favorited}}active{{/if}}"></span>
                 
             </div>
         </script>

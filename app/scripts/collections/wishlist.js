@@ -27,7 +27,8 @@ BuyForBaby.Collections = BuyForBaby.Collections || {};
         		fulfilledQuantity: 0,
                 price: citem.get('price'),
                 source: citem.get('source'),
-                link: citem.get('link')
+                link: citem.get('link'),
+                gifters: [{name: "Joe", qty: "1"}]
         	});
         	this.add(newDesiredItem);
         },

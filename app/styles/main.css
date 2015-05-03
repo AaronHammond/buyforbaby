@@ -648,9 +648,7 @@ span.label{
 
 .fulfilledItem img {
     max-height: 100px;
-    max-width: 100px;
-    min-height: 100px;
-    min-width: 100px;
+    max-width: 100%;
     border-radius: 4px;
 }
 
@@ -694,11 +692,13 @@ span.label{
 }
 
 .catalogue-sourcing {
-    position: relative;
+    position: absolute;
     top: 50%;
-    margin-top: 90px;
+    margin-top: 25px;
     font-size: 10px;
     color: white;
+    text-align: center;
+    width: 100%;
 }
 
 .catalogue-sourcing a {
@@ -706,7 +706,11 @@ span.label{
 }
 
 .wishlist-sourcing a {
-    color: #9AD1FF;
+    color: #337ab7;
+}
+
+.gifter-list span {
+    font-size: 16px !important;
 }
 
 
