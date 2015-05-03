@@ -51,7 +51,7 @@ window.BuyForBaby = Backbone.Router.extend({
             app.navigate('wishlist', {trigger: true});
         });
 
-        $('.logo').off().on('click', function() {
+        $('#logoText').off().on('click', function() {
             app.navigate('wishlist', {trigger: true});
         });
 
@@ -94,8 +94,13 @@ window.BuyForBaby = Backbone.Router.extend({
             }).addClass('open');
         }).removeClass('open');
 
-        $('#editButton').off().on('click', function() {
+        $('#editButton').off().on('click', function(e) {
             app.navigate('catalogue', {trigger: true});
+            e.stopPropagation();
+        });
+
+        $('#logoText').off().on('click', function() {
+            app.navigate('wishlist', {trigger: true});
         });
     }
 });

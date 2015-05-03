@@ -10,7 +10,7 @@
         <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
 
-        <!-- START TEMPLATES (n.b. we will move these out to secondary files when we can, but for now, edit here) -->
+        <!-- START TEMPLATES  -->
 
         <script id="landing-template" type="text/x-handle-bars-template">
             <ul id="landing-banner">
@@ -52,9 +52,9 @@
 
         <script id="desiredItem-template" type="text/x-handle-bars-template">
             <div class="col-xs-4">
-                <img src="{{image}}" height="100%" width="100%"></img>
+                <img src="{{image}}"></img>
             </div>
-            <div class="col-xs-3">
+            <div class="col-xs-2">
                 <div class="quant-spinner btn-group-vertical" role="group" aria-label="...">
                     <button type="button" class="btn btn-default btn-small quantUp">
                         <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
@@ -70,8 +70,16 @@
                 </div>
             </div>
             <div class="col-xs-5">
+
+                <div class="wishlist-comments">
+                    <textarea class="form-control" placeholder="Comments..." rows=3>{{comment}}</textarea>
+                </div>
+                <div class="wishlist-sourcing">
+                    <a href="amazon.com">Amazon</a> | $15
+                </div>
+            </div>
+            <div class="col-xs-1">
                 <div class="wishlist-controls">
-                    <span class="pull-left glyphicon glyphicon-heart favoriting {{#if favorited}}active{{/if}}"></span>
                     <button class="item-remover miniature pull-right" style="visibility: visible;">
                         <span class="remover-ico">x</span>
                         <div class="radial-progress" data-progress="100">
@@ -87,11 +95,6 @@
                         </div>
                     </button>
                 </div>
-                <div class="wishlist-comments">
-                    <textarea class="form-control" placeholder="Comments..." rows=3>{{comment}}</textarea>
-                </div>
-                
-                
             </div>
         </script>
 
@@ -201,13 +204,14 @@
                                 <input class="registration" type="text" placeholder="Registry title "><br>
                                 <button class="btn-landing submit">Create</button>
                             </form>
-                            <form class="registration guests open">
+                            <form class="registration guests">
                                 <input class="registration" type="text" placeholder="Your name *" autofocus><br>
                                 <input class="registration" type="text" placeholder="Parent's Last Name"><br>
                                 <div class="registration">or</div>
                                 <input class="registration" type="text" placeholder="Registry Name"><br>
                                 <button class="btn-landing submit">Search</button>
                             </form>
+                            <form class="registration open" style="display: none;"></form>
                         </div>
                     </div>
                     <div id="about-section">
@@ -250,7 +254,7 @@
         <!-- Catalogue Page -->
         <section id="mainPage" class="container-fluid" style="display: none;">
             <div id = "main-logo" class="logo row">
-                Bu<span class="kerning">y</span>ForBaby
+                <div id="logoText" class="pull-left">Bu<span class="kerning">y</span>ForBaby</div>
                 <button id="doneButton" class="btn-landing pull-right">Done Adding Items</button>
             </div>
             <div id="content" class="row container-height">
@@ -265,7 +269,7 @@
         <!-- CompleteList Page -->
         <section id="completelistpage" class="container-fluid" style="display: none;">
             <div class="logo row">
-                Bu<span class="kerning">y</span>ForBaby
+                <div id="logoText" class="pull-left">Bu<span class="kerning">y</span>ForBaby</div>
                 <button id="editButton" class="btn-landing pull-right">Add Items</button>
             </div>            
             <div id="content" class="row container-height">
