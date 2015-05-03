@@ -49,15 +49,15 @@ BuyForBaby.Views = BuyForBaby.Views || {};
                     var jiggle = function (i) {
                         if(i > 0) {
                             self.$('.item-remover').animate({
-                                "margin-right": "5px"
+                                "margin-right": "0px"
                             }, 100, function() {
                                 self.$('.item-remover').animate({
-                                    "margin-right": "-5px"
+                                    "margin-right": "-10px"
                                 }, 100, jiggle.bind(null, i-1));
                             });
                         } else {
                             self.$('.item-remover').animate({
-                                    "margin-right": "0px"
+                                    "margin-right": "-5px"
                             }, 100);
                         }
                     };
