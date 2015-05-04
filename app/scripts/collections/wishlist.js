@@ -5,15 +5,49 @@ BuyForBaby.Collections = BuyForBaby.Collections || {};
 (function () {
     'use strict';
 
+    var ParseBackedWishlist = Parse.Object.extend("Wistlist");
+
     BuyForBaby.Collections.Wishlist = Backbone.Collection.extend({
 
         model: BuyForBaby.Models.DesiredItem,
 
-        initialize: function() {
+        initialize: function(items, options) {
         	var vent = BuyForBaby.EventBus;
 
         	vent.bind('addCataloguedItem', this.addCataloguedItem, this);
         	vent.bind('removeCataloguedItem', this.removeCataloguedItem, this);
+
+            if(options.parseBackId) {
+                var query = new Parse.Query(ParseBackedWishlist);
+
+                var self = this;
+                query.get(options.parseBackId, {
+                  success: function(cloud) {
+                    self.add(cloud.get("items"));
+                    self.each(function(o) {
+                        $('div[x-wishlist-collection-id=' + o.get('catalogueId') + ']').addClass("added").removeClass('eligible');
+                    });
+
+                    self.parseBack = cloud;
+                  },
+                  error: function(object, error) { }
+                });
+            } else {
+                this.parseBack = new ParseBackedWishlist();
+                this.parseBack.set("ownerFirstname", options.firstName);
+                this.parseBack.set("ownerLastname", options.lastName);
+                this.parseBack.set("registryName", options.registryName);
+                this.parseBack.set("items", []);
+
+                this.parseBack.save(null, {
+                    success: options.successCallback,
+                    error: function(o, error) {
+                        console.log(error);
+                    }
+                });
+            }
+
+            this.bind('change add remove reset', this.change);
         },
 
         addCataloguedItem: function(citem) {
@@ -35,6 +69,16 @@ BuyForBaby.Collections = BuyForBaby.Collections || {};
 
         removeCataloguedItem: function(citem) {
         	this.remove(this.findWhere({ catalogueId: citem.cid }));
+
+            
+        },
+
+        change: function() {
+            if(this.parseBack) {
+                this.parseBack.set("items", this.toJSON());
+                this.parseBack.save();
+            }
+            
         }
 
     });

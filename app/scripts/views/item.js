@@ -64,6 +64,8 @@ BuyForBaby.Views = BuyForBaby.Views || {};
                 this.$el.addClass('added');
             }
 
+            this.$el.attr('x-wishlist-collection-id', this.model.cid);
+
             return this;
         }
 

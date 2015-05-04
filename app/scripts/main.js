@@ -1,3 +1,17 @@
+Parse.initialize("3P7ymFd28OAzQc0LX0LQv6whphN78063JYatUJeI", "jqOFs6HBeByT1VHEkUipeUFcqrPd53wfa55KIbFu");
+
+// cookie function borrowed from http://www.w3schools.com/js/js_cookies.asp
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
+}
+
 window.BuyForBaby = Backbone.Router.extend({
     Models: {},
     Collections: {},
@@ -17,10 +31,21 @@ window.BuyForBaby = Backbone.Router.extend({
         // create a global eventbus (inspired by http://spin.atomicobject.com/2012/04/16/lets-talk-an-eventbus-in-backbone-js/)
         BuyForBaby.EventBus = _.extend({}, Backbone.Events)
 
-        this.wishlist = new BuyForBaby.Collections.Wishlist([]);
         this.catalogue = loadData();
-    
-        
+
+        this.loadExistingWishlist();
+    },
+
+    loadExistingWishlist: function() {
+        var wishlistId = getCookie("wishlist");
+        wishlistId = "ncbg1U8mtn";
+        if(wishlistId != "") {
+            this.wishlist = new BuyForBaby.Collections.Wishlist([], {
+                parseBackId: wishlistId
+            });
+        } else {
+            window.location.hash = "";
+        }
     },
 
     viewCatalogue: function() {
@@ -60,6 +85,7 @@ window.BuyForBaby = Backbone.Router.extend({
     viewLandingPage: function() {
         $('#banner').html(new BuyForBaby.Views.Landing().render().$el);
 
+        var self = this;
         $('body > section.open').fadeOut('slow', function() {
             $('#landingPage').fadeIn('slow', function() {
 
@@ -78,7 +104,18 @@ window.BuyForBaby = Backbone.Router.extend({
                 $('form').off().on('submit', function(e) {
                     e.preventDefault();
 
-                    app.navigate('catalogue', {trigger: true});
+                    self.wishlist = new BuyForBaby.Collections.Wishlist([], {
+                        firstName: "john",
+                        lastName: "peters",
+                        registryName: "party!",
+                        successCallback: function(wishlist) {
+                            console.log(wishlist);
+                            document.cookie="wishlist=" + wishlist.id;
+                            app.navigate('catalogue', {trigger: true});
+                        }
+                    });
+
+                    
                 });
 
             }).addClass('open');
