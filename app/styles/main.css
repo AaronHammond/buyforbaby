@@ -412,9 +412,9 @@ span.label{
 .radial-progress .circle .mask,
 .radial-progress .circle .fill {
   -webkit-backface-visibility: hidden;
-  transition: -webkit-transform 0.5s linear;
-  transition: -ms-transform 0.5s linear;
-  transition: transform 0.5s linear;
+  transition: -webkit-transform 0.25s linear;
+  transition: -ms-transform 0.25s linear;
+  transition: transform 0.25s linear;
   border-radius: 50%;
 }
 .radial-progress .circle .mask {
