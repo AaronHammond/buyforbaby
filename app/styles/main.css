@@ -63,7 +63,7 @@ body > .container-fluid {
 }
 
 h1.shoppingView{
-    color: #FFFFFF; 
+    color: #7B7B7C;
     text-align: center;
     font-weight: 600;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
@@ -222,7 +222,8 @@ span.label{
 }
 
 #navTabs > li.active, #navTabs > li.active {
-    color: #FFFFFF;
+    color: #7B7B7C;
+    font-weight: 600;
 }
 
 #navTabs > li.active > a {
@@ -649,7 +650,7 @@ span.label{
     height: 70px;
     width: 100%;
 
-    color: #FFFFFF;
+    color: #7B7B7C;
     text-align: center;
     font-weight: 600;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
