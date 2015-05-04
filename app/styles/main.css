@@ -627,7 +627,7 @@ span.label{
 }
 
 .btn-default > span {
-    color: darkgray;
+    color: rgb(122, 122, 122);
     cursor: pointer;
 }
 
