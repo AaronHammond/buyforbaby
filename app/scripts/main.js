@@ -39,7 +39,7 @@ window.BuyForBaby = Backbone.Router.extend({
 
     loadExistingWishlist: function() {
         var wishlistId = getCookie("wishlist");
-        wishlistId = "ncbg1U8mtn";
+        //wishlistId = "ncbg1U8mtn";
         if(wishlistId != "") {
             this.wishlist = new BuyForBaby.Collections.Wishlist([], {
                 parseBackId: wishlistId
@@ -106,9 +106,9 @@ window.BuyForBaby = Backbone.Router.extend({
                     e.preventDefault();
 
                     self.wishlist = new BuyForBaby.Collections.Wishlist([], {
-                        firstName: "john",
-                        lastName: "peters",
-                        registryName: "party!",
+                        firstName: $('#inputFirstName').val(),
+                        lastName: $('#inputFirstName').val(),
+                        registryName: $('#inputTitle').val(),
                         successCallback: function(wishlist) {
                             console.log(wishlist);
                             document.cookie="wishlist=" + wishlist.id;
