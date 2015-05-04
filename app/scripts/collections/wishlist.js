@@ -29,6 +29,8 @@ BuyForBaby.Collections = BuyForBaby.Collections || {};
                     });
 
                     self.parseBack = cloud;
+
+                    $('.shoppingView').text(cloud.get("ownerFirstname") + "'s Registry");
                   },
                   error: function(object, error) { }
                 });
@@ -62,7 +64,7 @@ BuyForBaby.Collections = BuyForBaby.Collections || {};
                 price: citem.get('price'),
                 source: citem.get('source'),
                 link: citem.get('link'),
-                gifters: [{name: "Joe", qty: "1"}]
+                gifters: []
         	});
         	this.add(newDesiredItem);
         },

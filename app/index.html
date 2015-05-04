@@ -183,19 +183,93 @@
             </div>
             <div class="col-xs-3">
                 <div class="wishlist-comments">
-                    <textarea class="form-control disabled" placeholder="Comments..." rows=3 disabled>{{comment}}</textarea>
+                    {{#if comment}}
+                        <div class="well">{{comment}}</div>
+                    {{else}}
+                        <div class="well">No comment</div>
+                    {{/if}}
+                    
+                </div>
+                <div class="wishlist-sourcing">
+                    {{#if link}}
+                        <a href="{{link}}" target="_blank">{{source}}</a>
+                    {{else}}
+                        <span>{{source}}</span>
+                    {{/if}}
+                     | {{price}}
                 </div>
             </div>
             <div class="col-xs-3">
                 <div class="gifter-list">
                     {{#each gifters}}
-                        <span>{{name}} bought {{qty}}</span>
+                        <p>{{name}} bought {{qty}}</p>
                     {{else}}
-                        <span>No buyers yet</span>
+                        <p>No buyers yet</p>
                     {{/each}}
                 </div>
                 
                 
+            </div>
+        </script>
+
+        <script id="gifterItem-template" type="text/x-handle-bars-template">
+            <div class="col-xs-3">
+                <img src="{{image}}"></img>
+            </div>
+            <div class="col-xs-3">
+                <span>{{remaining}}</span>
+            </div>
+            <div class="col-xs-3">
+                <div class="wishlist-comments">
+                    {{#if comment}}
+                        <div class="well">{{comment}}</div>
+                    {{else}}
+                        <div class="well">No comment</div>
+                    {{/if}}
+                </div>
+                <div class="wishlist-sourcing">
+                    {{#if link}}
+                        <a href="{{link}}" target="_blank">{{source}}</a>
+                    {{else}}
+                        <span>{{source}}</span>
+                    {{/if}}
+                     | {{price}}
+                </div>
+            </div>
+            <div class="col-xs-3">
+                
+                <button id="giftme" class="btn btn-default btn-lg carousel-controller">
+                    <span class="glyphicon glyphicon-gift"></span>
+                </button>
+
+                <div class="form-horizontal" style="display: none;">
+                  <div class="form-group">
+                    <label class="col-sm-6 control-label">Your name</label>
+                    <div class="col-sm-6">
+                      <input id="inputName" type="email" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-6 control-label">Quantity</label>
+                    <div class="col-sm-4">
+                      <input id="inputQuantity" type="number" class="form-control" id="" value="1" min="1" max="{{remaining}}">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button id="confirmGiftMe" type="submit" class="btn-landing">Confirm</button>
+                    </div>
+                  </div>
+                </div>
+
+                <span id="thankYou" style="display: none;">Thank you!</span>
+            </div>
+        </script>
+
+        <script id="gifterlist-template" type="text/x-handle-bars-template">
+            <h1 class="shoppingView"></h1>
+            <div id="completedItems" class="container-fluid">
+
             </div>
         </script>
 
@@ -217,7 +291,7 @@
                         <h1 class="title-landing">Looks like someone's having a party!</h1>
                         <h4 class="blurb">We'll take care of the accounting while you take care of the guest of honor.</h4>
                         <button id="createRegistry" class="btn-landing">Create a Registry</button>
-                        <button id="findRegistry" class="btn-landing">Find a Registry</button>
+                        <button id="findRegistry" class="btn-landing" style="display: none;">Find a Registry</button>
                         <div id="formHolder">
                             <form class="registration parents">
                                 <input class="registration" type="text" placeholder="Your first name" autofocus><br>
@@ -299,6 +373,17 @@
             </div>
         </section>
 
+         <!-- GifterList Page -->
+        <section id="gifterlistpage" class="container-fluid" style="display: none;">
+            <div class="logo row">
+                <div id="logoText" class="pull-left">Bu<span class="kerning">y</span>ForBaby</div>
+            </div>            
+            <div id="content" class="row container-height">
+                <div id="gifterlist" class="col-xs-8 col-xs-offset-2">
+                </div>
+            </div>
+        </section>
+
         <section class="open" style="display: none;"></section>
 
         <!-- Vendor Scripts -->
@@ -354,6 +439,9 @@
         <!-- a collection of metacategories (that is, the top level of item selection, hierarchically) -->
         <script src="scripts/collections/catalogue.js"></script>
         <script src="scripts/views/catalogue.js"></script>
+
+        <script src="scripts/views/gifterlist.js"></script>
+        <script src="scripts/views/gifterItem.js"></script>
 
 </body>
 </html>

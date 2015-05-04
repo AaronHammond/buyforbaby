@@ -103,6 +103,25 @@ h1.shoppingView{
     display: table-cell;
 }
 
+#gifterlist {
+    background-color: #F4F4F4;
+    /* border: 1px solid #BEB3EF; */
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    float: none;
+    display: table-cell;
+}
+
+#gifterlist .form-group {
+    margin-bottom: 2px;
+}
+
+#gifterlist .btn-landing {
+    height: auto;
+    width: auto;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
 #innerWishlistContainer {
     position: absolute;
     top: 0px;
@@ -152,7 +171,7 @@ span.label{
 }
 
 .btn-default:active > span {
-    color: rgba(74, 74, 74, 0.75);
+    color: rgba(74, 74, 74, 0.75) !important;
 }
 
 #navTabs {
@@ -603,6 +622,22 @@ span.label{
     right: 0;
 }
 
+#gifterlist #completedItems {
+    bottom: 0px;
+}
+
+.btn-default > span {
+    color: darkgray;
+    cursor: pointer;
+}
+
+
+
+#gifterlist #completedItems span {
+    color: darkgray;
+    cursor: pointer;
+}
+
 #completedItems span {
     color: rgba(75,75,75, 1.0);
     font-size: 24px;
@@ -709,9 +744,44 @@ span.label{
     color: #337ab7;
 }
 
+.wishlist-sourcing span {
+    font-size: 14px !important;
+    color: #7b7b7c !important;
+}
+
 .gifter-list span {
     font-size: 16px !important;
 }
+
+
+.gifterItem {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    /* background-color: #E8D8FF; */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+    min-height: 130px;
+    max-height: 130px;
+}
+
+.gifterItem img {
+    max-height: 100px;
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.gifterItem > div:last-child {
+    padding-left: 0;
+    text-align: center;
+}
+
+.gifterItem > div {
+    text-align: center;
+}
+
 
 
 

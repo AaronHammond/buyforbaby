@@ -3,13 +3,13 @@ BuyForBaby.Views = BuyForBaby.Views || {};
 (function () {
     'use strict';
 
-    BuyForBaby.Views.CompleteList = Backbone.View.extend({
+    BuyForBaby.Views.GifterList = Backbone.View.extend({
 
-        template: templates['completelist'],
+        template: templates['gifterlist'],
 
         tagName: 'div',
 
-        id: 'innerCompleteListContainer',
+        id: 'innerGifterListContainer',
 
         className: '',
 
@@ -25,15 +25,9 @@ BuyForBaby.Views = BuyForBaby.Views || {};
 
             var self = this;
             this.model.forEach(function(m) {
-                var it = new BuyForBaby.Views.FulfilledItem({ model: m });
+                var it = new BuyForBaby.Views.GifterItem({ model: m });
                 self.$el.find('#completedItems').append(it.render().el);
             });
-
-            this.$('.quant-spinner .quant').on('focus', function(e) {
-                $(e.currentTarget).find('input').focus();
-            });
-
-            this.$(".linkView input").val(window.location.href.split("#")[0] + "#gifter");
 
             return this;
         }

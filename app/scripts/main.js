@@ -21,7 +21,8 @@ window.BuyForBaby = Backbone.Router.extend({
     routes: {
         "": "viewLandingPage",
         "catalogue": "viewCatalogue",
-        "wishlist": "viewWishlist"
+        "wishlist": "viewWishlist",
+        "gifter": "viewGifterList"
     },
 
     initialize: function () {
@@ -138,6 +139,17 @@ window.BuyForBaby = Backbone.Router.extend({
 
         $('#logoText').off().on('click', function() {
             app.navigate('wishlist', {trigger: true});
+        });
+    },
+
+    viewGifterList: function() {
+        $('#gifterlist').html(new BuyForBaby.Views.GifterList({ model: this.wishlist }).render().$el);
+
+        $('#gifterlistpage').fadeIn('slow', function() {
+        }).addClass('open');
+
+        $('#logoText').off().on('click', function() {
+            app.navigate('gifter', {trigger: true});
         });
     }
 });
