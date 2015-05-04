@@ -176,13 +176,13 @@
 
 
         <script id="fulfilledItem-template" type="text/x-handle-bars-template">
-            <div class="col-xs-3">
+            <div class="col-xs-4">
                 <img src="{{image}}"></img>
             </div>
-            <div class="col-xs-3">
+            <div class="col-xs-2">
                 <span>{{fulfilledQuantity}} / {{quantity}}</span>
             </div>
-            <div class="col-xs-3">
+            <div class="col-xs-7">
                 <div class="wishlist-comments">
                     {{#if comment}}
                         <div class="well">{{comment}}</div>
@@ -200,7 +200,7 @@
                      | {{price}}
                 </div>
             </div>
-            <div class="col-xs-3">
+            <div class="col-xs-4">
                 <div class="gifter-list">
                     {{#each gifters}}
                         <p>{{name}} bought {{qty}}</p>
